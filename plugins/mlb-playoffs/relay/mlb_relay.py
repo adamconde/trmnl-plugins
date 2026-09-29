@@ -15,6 +15,7 @@ leaves the last good data on screen.
 """
 
 import argparse
+import datetime
 import json
 import os
 import sys
@@ -22,8 +23,10 @@ import urllib.error
 import urllib.request
 
 # `fields` trims the response to what the transform reads (~22 KB instead of ~170 KB).
+# The postseason always falls within one calendar year, so `season` is the current
+# year; off-season, MLB returns an empty `series` list until the bracket is set.
 MLB_URL = (
-    "https://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season=2026"
+    "https://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season={season}"
     "&hydrate=team,linescore,seriesStatus"
     "&fields=series,series,id,games,gameDate,officialDate,seriesGameNumber,gamesInSeries,status,"
     "abstractGameState,detailedState,startTimeTBD,teams,away,home,team,id,abbreviation,placeholder,"
@@ -36,7 +39,7 @@ USER_AGENT = "trmnl-mlb-relay"
 
 
 def fetch_feed():
-    """Fetch and parse the postseason feed from MLB.
+    """Fetch and parse the current season's postseason feed from MLB.
 
     Returns:
         dict: The parsed feed.
@@ -45,7 +48,8 @@ def fetch_feed():
         urllib.error.URLError, ValueError: On network failure or a response
             that isn't a feed with a ``series`` list.
     """
-    request = urllib.request.Request(MLB_URL, headers={"Accept": "application/json", "User-Agent": USER_AGENT})
+    url = MLB_URL.format(season=datetime.date.today().year)
+    request = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": USER_AGENT})
     with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
         feed = json.load(response)
     if not isinstance(feed.get("series"), list):

@@ -1,6 +1,6 @@
 # MLB Playoffs
 
-2026 MLB postseason bracket for TRMNL: team logos, series record, next game date/time (TBD when unscheduled), and live score + inning for games in progress.
+MLB postseason bracket for TRMNL: team logos, series record, next game date/time (TBD when unscheduled), and live score + inning for games in progress.
 
 ## How it works
 
@@ -51,8 +51,8 @@ bin/trmnlp lint
 python3 -m unittest discover tests   # transform and relay tests
 ```
 
-Preview times use `time_zone` in `.trmnlp.yml`. To preview recorded data, post a fixture: `curl -X POST -H "Content-Type: application/json" --data-binary @tests/fixtures/postseason_2025.json localhost:4567/webhook`. To refresh fixtures, save the relay's `MLB_URL` response (change `season=` as needed) into `tests/fixtures/`. Tests assert on game state captured at recording time, so update the expectations as well.
+Preview times use `time_zone` in `.trmnlp.yml`. To preview recorded data, post a fixture: `curl -X POST -H "Content-Type: application/json" --data-binary @tests/fixtures/postseason_2025.json localhost:4567/webhook`. To refresh fixtures, save the relay's `MLB_URL` response (fill in `{season}`) into `tests/fixtures/`. Tests assert on game state captured at recording time, so update the expectations as well.
 
 ## Next season
 
-Change `season=2026` in `MLB_URL` in [relay/mlb_relay.py](relay/mlb_relay.py) (and on the NAS), and `description` in `src/settings.yml`.
+Nothing to change: the relay requests the current year's postseason. Off-season, MLB returns no series and the plugin shows "No postseason schedule yet" until the bracket is published (usually late September). Leave the NAS task running year-round, or disable it after the World Series and re-enable it each fall.

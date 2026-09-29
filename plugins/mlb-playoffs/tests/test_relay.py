@@ -3,6 +3,7 @@
 Run from the plugin directory: python3 -m unittest discover tests
 """
 
+import datetime
 import io
 import json
 import os
@@ -65,7 +66,9 @@ class Main(unittest.TestCase):
     def test_fetches_then_posts(self):
         code, urlopen, _ = self.run_main(response(FEED), response({"message": "ok"}))
         self.assertEqual(code, 0)
-        self.assertIn("statsapi.mlb.com", urlopen.call_args_list[0].args[0].full_url)
+        mlb_url = urlopen.call_args_list[0].args[0].full_url
+        self.assertIn("statsapi.mlb.com", mlb_url)
+        self.assertIn(f"season={datetime.date.today().year}&", mlb_url)
         self.assertEqual(urlopen.call_args_list[1].args[0].full_url, WEBHOOK)
 
     def test_bad_feed_is_not_posted(self):
