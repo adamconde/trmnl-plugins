@@ -7,7 +7,7 @@ MLB postseason bracket for TRMNL: team logos, series record, next game date/time
 MLB's Stats API returns HTTP 406 to requests from cloud networks, including TRMNL's servers and Serverless machines (since about 2026-09-27). So TRMNL can't fetch the data itself; a machine on your home network relays it:
 
 ```text
-home NAS (every 10 min)                        TRMNL
+home NAS/Linux (every 10 min)                  TRMNL
 relay/mlb_relay.py --- MLB feed (~22 KB) --->  webhook -> src/transform.py -> templates
 ```
 
@@ -19,7 +19,9 @@ relay/mlb_relay.py --- MLB feed (~22 KB) --->  webhook -> src/transform.py -> te
 
 Card legend: filled dots = series wins (dots = wins needed), large number = live game score, bold = series winner, gray = eliminated. Unresolved slots show the possible teams (`HOU/CWS`) or `TBD`. "Updated" is when TRMNL last received data; if it stops advancing, check the relay.
 
-## Relay setup (Synology NAS)
+## Relay setup
+
+The relay needs an always-on machine on your home network with Python 3.8+ and outbound HTTPS. No other dependencies.
 
 1. Copy your webhook URL from the plugin's settings page on trmnl.com (**Webhook URL**, `https://trmnl.com/api/custom_plugins/<uuid>`). Treat it like a password: anyone with it can post to your plugin.
 2. Optional: test from any home machine first:
@@ -29,18 +31,100 @@ Card legend: filled dots = series wins (dots = wins needed), large number = live
    python3 relay/mlb_relay.py                                # expect: posted ... bytes: HTTP 200
    ```
 
-3. Copy `relay/mlb_relay.py` to the NAS, e.g. `/volume1/scripts/mlb_relay.py`.
-4. In DSM: **Control Panel → Task Scheduler → Create → Scheduled Task → User-defined script**.
+3. Schedule it every 10 minutes with one of the options below. That's 6 posts an hour, under the webhook limit of 12 (30 on TRMNL+).
+
+Off-season the relay just posts an empty schedule, so you can leave it running year-round or disable it after the World Series.
+
+### Synology NAS
+
+1. Copy `relay/mlb_relay.py` to the NAS, e.g. `/volume1/scripts/mlb_relay.py`.
+2. In DSM: **Control Panel → Task Scheduler → Create → Scheduled Task → User-defined script**.
    - **General:** name it `TRMNL MLB relay`. Pick a regular user rather than `root`; the script only needs network access and read access to its own file.
-   - **Schedule:** daily, first run 00:00, repeat **every 10 minutes**, last run 23:50. That's 6 posts an hour, under the webhook limit of 12 (30 on TRMNL+).
+   - **Schedule:** daily, first run 00:00, repeat **every 10 minutes**, last run 23:50.
    - **Task Settings:** tick **Send run details by email → only when the script terminates abnormally**, and set the script to:
 
      ```bash
      TRMNL_WEBHOOK_URL='https://trmnl.com/api/custom_plugins/<uuid>' python3 /volume1/scripts/mlb_relay.py
      ```
 
-5. Select the task and **Run** it once, then confirm "Updated" advances on the plugin.
-6. After the World Series, disable the task.
+3. Select the task and **Run** it once, then confirm "Updated" advances on the plugin.
+
+### Linux (systemd)
+
+Runs the relay as a throwaway system user (`DynamicUser`), with the webhook URL in a root-only file.
+
+1. Install the script and create the webhook URL file:
+
+   ```bash
+   sudo install -D -m 755 relay/mlb_relay.py /opt/trmnl-mlb-relay/mlb_relay.py
+   sudo install -m 600 /dev/null /etc/trmnl-mlb-relay.env
+   sudoedit /etc/trmnl-mlb-relay.env
+   ```
+
+   The file holds one line:
+
+   ```bash
+   TRMNL_WEBHOOK_URL=https://trmnl.com/api/custom_plugins/<uuid>
+   ```
+
+2. Create `/etc/systemd/system/trmnl-mlb-relay.service`:
+
+   ```ini
+   [Unit]
+   Description=Relay MLB postseason feed to TRMNL
+   Wants=network-online.target
+   After=network-online.target
+
+   [Service]
+   Type=oneshot
+   DynamicUser=yes
+   EnvironmentFile=/etc/trmnl-mlb-relay.env
+   ExecStart=/usr/bin/python3 /opt/trmnl-mlb-relay/mlb_relay.py
+   ```
+
+3. Create `/etc/systemd/system/trmnl-mlb-relay.timer`:
+
+   ```ini
+   [Unit]
+   Description=Run the TRMNL MLB relay every 10 minutes
+
+   [Timer]
+   OnCalendar=*:0/10
+   Persistent=true
+
+   [Install]
+   WantedBy=timers.target
+   ```
+
+4. Enable the timer, run once, and check the result:
+
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now trmnl-mlb-relay.timer
+   sudo systemctl start trmnl-mlb-relay.service
+   journalctl -u trmnl-mlb-relay.service -n 5     # expect: posted ... bytes: HTTP 200
+   systemctl list-timers trmnl-mlb-relay.timer    # next run
+   ```
+
+### Linux (cron)
+
+For systems without systemd, run it from your user's crontab:
+
+1. Install the script and create the webhook URL file:
+
+   ```bash
+   install -D -m 755 relay/mlb_relay.py ~/trmnl-mlb-relay/mlb_relay.py
+   install -m 600 /dev/null ~/trmnl-mlb-relay/relay.env
+   ```
+
+   Put `export TRMNL_WEBHOOK_URL='https://trmnl.com/api/custom_plugins/<uuid>'` in `~/trmnl-mlb-relay/relay.env`.
+2. Add this line with `crontab -e`:
+
+   ```bash
+   */10 * * * * . "$HOME/trmnl-mlb-relay/relay.env" && python3 "$HOME/trmnl-mlb-relay/mlb_relay.py" >> "$HOME/trmnl-mlb-relay/relay.log" 2>&1
+   ```
+
+3. Check `~/trmnl-mlb-relay/relay.log` after the next 10-minute mark.
 
 ## Development
 
@@ -55,4 +139,4 @@ Preview times use `time_zone` in `.trmnlp.yml`. To preview recorded data, post a
 
 ## Next season
 
-Nothing to change: the relay requests the current year's postseason. Off-season, MLB returns no series and the plugin shows "No postseason schedule yet" until the bracket is published (usually late September). Leave the NAS task running year-round, or disable it after the World Series and re-enable it each fall.
+Nothing to change: the relay requests the current year's postseason. Off-season, MLB returns no series and the plugin shows "No postseason schedule yet" until the bracket is published (usually late September).
