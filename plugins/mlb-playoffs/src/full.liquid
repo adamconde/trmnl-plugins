@@ -1,15 +1,33 @@
 <div class="layout">
   {% if has_data %}
   {% comment %} 7 narrow columns need small cards; the 5-column bracket has room for medium. {% endcomment %}
-  {% if bracket.show_wc %}{% assign size = "sm" %}{% else %}{% assign size = "md" %}{% endif %}
-  <div class="mlb-bracket{% unless bracket.show_wc %} mlb-bracket--no-wc{% endunless %}">
-    {% if bracket.show_wc %}{% render "round_column", area: "al-wc", header: "AL WC", list: bracket.al.wc, size: size %}{% endif %}
-    {% render "round_column", area: "al-ds", header: "ALDS", list: bracket.al.ds, size: size %}
-    {% render "round_column", area: "al-cs", header: "ALCS", list: bracket.al.cs, size: size %}
-    {% render "round_column", area: "ws", header: "World Series", single: bracket.ws, size: size %}
-    {% render "round_column", area: "nl-cs", header: "NLCS", list: bracket.nl.cs, size: size %}
-    {% render "round_column", area: "nl-ds", header: "NLDS", list: bracket.nl.ds, size: size %}
-    {% if bracket.show_wc %}{% render "round_column", area: "nl-wc", header: "NL WC", list: bracket.nl.wc, size: size %}{% endif %}
+  {% if bracket.show_wc %}{% assign size = "sm" %}{% assign cols = 7 %}{% else %}{% assign size = "md" %}{% assign cols = 5 %}{% endif %}
+  {% comment %} Landscape: one row, AL on the left, World Series in the middle, NL on the right. {% endcomment %}
+  <div class="grid grid--cols-{{ cols }} gap--small w--full h--full portrait:hidden">
+    {% if bracket.show_wc %}{% render "round_column", header: "AL WC", list: bracket.al.wc, size: size %}{% endif %}
+    {% render "round_column", header: "ALDS", list: bracket.al.ds, size: size %}
+    {% render "round_column", header: "ALCS", list: bracket.al.cs, size: size %}
+    {% render "round_column", header: "World Series", single: bracket.ws, size: size %}
+    {% render "round_column", header: "NLCS", list: bracket.nl.cs, size: size %}
+    {% render "round_column", header: "NLDS", list: bracket.nl.ds, size: size %}
+    {% if bracket.show_wc %}{% render "round_column", header: "NL WC", list: bracket.nl.wc, size: size %}{% endif %}
+  </div>
+  {% comment %} Portrait: AL row, World Series centered, NL row. {% endcomment %}
+  <div class="flex flex--col gap--small w--full h--full landscape:hidden">
+    <div class="grid grid--cols-{% if bracket.show_wc %}3{% else %}2{% endif %} gap--small grow">
+      {% if bracket.show_wc %}{% render "round_column", header: "AL WC", list: bracket.al.wc, size: size %}{% endif %}
+      {% render "round_column", header: "ALDS", list: bracket.al.ds, size: size %}
+      {% render "round_column", header: "ALCS", list: bracket.al.cs, size: size %}
+    </div>
+    <div class="grid grid--cols-{% if bracket.show_wc %}3{% else %}4{% endif %} gap--small">
+      <div></div>
+      <div class="{% unless bracket.show_wc %}col--span-2{% endunless %}">{% render "round_column", header: "World Series", single: bracket.ws, size: size %}</div>
+    </div>
+    <div class="grid grid--cols-{% if bracket.show_wc %}3{% else %}2{% endif %} gap--small grow">
+      {% if bracket.show_wc %}{% render "round_column", header: "NL WC", list: bracket.nl.wc, size: size %}{% endif %}
+      {% render "round_column", header: "NLDS", list: bracket.nl.ds, size: size %}
+      {% render "round_column", header: "NLCS", list: bracket.nl.cs, size: size %}
+    </div>
   </div>
   {% else %}
   <span class="title">No postseason schedule yet</span>
