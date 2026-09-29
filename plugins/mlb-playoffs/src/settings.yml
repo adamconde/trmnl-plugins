@@ -37,6 +37,12 @@ custom_fields:
   field_type: author_bio
   description: MLB postseason bracket with team logos, series records, next game times and live scores.<br/><br/>MLB blocks TRMNL's servers, so this plugin needs a small relay script on your home network (a NAS or any Linux machine) that posts data to the plugin's webhook. See the <a href="https://github.com/adamconde/trmnl-plugins/blob/main/plugins/mlb-playoffs/README.md">setup instructions</a>.<br/><br/>Version 1.0.0
   learn_more_url: https://github.com/adamconde/trmnl-plugins/blob/main/plugins/mlb-playoffs/README.md
+  category: sports
+- keyname: webhook_url
+  field_type: copyable_webhook_url
+  name: Webhook URL
+  description: Set this as TRMNL_WEBHOOK_URL for the relay script on your home network. Keep it private; anyone with it can post to your plugin.
+  help_text: This will populate once the plugin has been created/saved.
 name: MLB Playoffs
 description: MLB postseason bracket
 recipe_overview: "MLB Playoffs puts the full MLB postseason bracket on your TRMNL. It shows every series from the Wild Card round through the World Series.\r\n\r\nEach matchup shows team logos, the series record as filled dots, and the date and time of the next game in your own timezone. Start times MLB hasn't announced yet show as TBD. When a game is in progress, the card shows a LIVE badge with the current score and inning. Finished series show the result, with the winner in bold and the eliminated team grayed out.\r\n\r\nThe full-screen view shows the whole bracket, with the American League on the left, the National League on the right, and the World Series in the middle. Once every Division Series matchup is set, the Wild Card round drops off to give the remaining series more room. Half-screen and quarter-screen views show just the current round, so it fits into a mashup alongside your other plugins. The bracket follows the current season automatically. In the off-season it shows \"No postseason schedule yet\" until MLB publishes the next bracket.\r\n\r\nSetup takes one extra step. MLB blocks requests from cloud servers, including TRMNL's, so a small relay script has to run on an always-on machine on your home network, such as a Synology NAS or any Linux box. Every 10 minutes, it fetches the bracket from MLB and sends it to your plugin's webhook. The script needs only Python, with nothing else to install. Step-by-step instructions are in the GitHub README linked from this recipe."
