@@ -1,33 +1,49 @@
 <style>
   .trmnl .mlb-logo { width: 20px; height: 20px; flex: none; filter: grayscale(1) contrast(1.3); }
-  .trmnl .mlb-abbr { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; }
-  .trmnl .mlb-bracket { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-template-rows: auto 1fr; gap: 4px 6px; width: 100%; height: 100%; }
-  .trmnl .mlb-bracket--no-wc { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .trmnl .mlb-round { display: flex; flex-direction: column; justify-content: space-around; gap: 6px; }
-  .trmnl .mlb-round > * { flex: none; }
-  .trmnl .mlb-bracket .mlb-logo { width: 16px; height: 16px; }
+  .trmnl .mlb-card--sm .mlb-logo { width: 16px; height: 16px; }
+  .trmnl .mlb-card--lg .mlb-logo { width: 28px; height: 28px; }
+  .trmnl .mlb-card .mlb-abbr { display: block; flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .trmnl .mlb-grid { grid-auto-rows: 1fr; }
+  /* Bracket: one column per round, placed by grid-area. Portrait stacks AL / World Series / NL rows. */
+  .trmnl .mlb-bracket { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-template-areas: "al-wc al-ds al-cs ws nl-cs nl-ds nl-wc"; gap: 6px; width: 100%; height: 100%; }
+  .trmnl .mlb-bracket--no-wc { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-areas: "al-ds al-cs ws nl-cs nl-ds"; }
+  .trmnl .screen--portrait .mlb-bracket { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 1fr auto 1fr; grid-template-areas: "al-wc al-ds al-cs" ". ws ." "nl-wc nl-ds nl-cs"; }
+  .trmnl .screen--portrait .mlb-bracket--no-wc { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-areas: "al-ds al-ds al-cs al-cs" ". ws ws ." "nl-ds nl-ds nl-cs nl-cs"; }
+  .trmnl .mlb-round { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .trmnl .mlb-round__cards { flex: 1; display: flex; flex-direction: column; justify-content: space-around; gap: 6px; }
+  .trmnl .mlb-round__cards > * { flex: none; }
 </style>
+
+{% comment %}
+  Card sizes: "sm" for the dense bracket, "md" (default), "lg" where the view has room.
+{% endcomment %}
 
 {% comment %} One team line: logo, abbreviation, series wins as dots (none for unresolved slots), live game score. {% endcomment %}
 {% template team_row %}
+{% case size %}
+  {% when "sm" %}{% assign abbr_class = "label" %}{% assign dots = "xsmall" %}{% assign score_class = "value--xxsmall" %}
+  {% when "lg" %}{% assign abbr_class = "title" %}{% assign dots = "base" %}{% assign score_class = "value--small" %}
+  {% else %}{% assign abbr_class = "label" %}{% assign dots = "small" %}{% assign score_class = "value--xsmall" %}
+{% endcase %}
 <div class="flex flex--row flex--center-y gap--xsmall">
   {% if team.placeholder %}<span class="mlb-logo"></span>{% else %}<img class="mlb-logo" src="https://www.mlbstatic.com/team-logos/team-cap-on-light/{{ team.id }}.svg">{% endif %}
-  <span class="mlb-abbr label{% if team.winner %} text--bold{% elsif team.eliminated %} text--gray-4{% endif %}">{{ team.abbr }}</span>
+  <span class="mlb-abbr {{ abbr_class }}{% if team.winner %} text--bold{% elsif team.eliminated %} text--gray-4{% endif %}">{{ team.abbr }}</span>
   {% unless team.placeholder %}
   {% assign needed = series.best_of | divided_by: 2 | plus: 1 %}
-  <span class="progress-dots progress-dots--{{ dots | default: "small" }} flex flex--row gap--xsmall">
+  <span class="progress-dots progress-dots--{{ dots }} flex flex--row gap--xsmall">
     {% for i in (1..needed) %}<span class="dot{% if i <= team.wins %} dot--filled{% endif %}"></span>{% endfor %}
   </span>
   {% endunless %}
-  {% if series.state == "live" %}<span class="value value--xsmall value--tnums">{{ team.score }}</span>{% endif %}
+  {% if series.state == "live" %}<span class="value {{ score_class }} value--tnums">{{ team.score }}</span>{% endif %}
 </div>
 {% endtemplate %}
 
-{% comment %} Series box: both teams plus live inning, next game time, or result. {% endcomment %}
+{% comment %} Series box: both teams plus live inning, next game time, or result (stacked on two lines in narrow bracket columns). {% endcomment %}
 {% template series_card %}
-<div class="outline p--1 flex flex--col flex--stretch gap--xsmall">
-  {% for team in series.teams %}{% render "team_row", team: team, series: series, dots: dots %}{% endfor %}
-  <div class="flex {% if dots == "xsmall" %}flex--col{% else %}flex--row{% endif %} flex--center gap--xsmall">
+{% assign size = size | default: "md" %}
+<div class="mlb-card mlb-card--{{ size }} outline p--1 flex flex--col flex--stretch flex--center-y gap--xsmall">
+  {% for team in series.teams %}{% render "team_row", team: team, series: series, size: size %}{% endfor %}
+  <div class="flex {% if stacked %}flex--col{% else %}flex--row{% endif %} flex--center gap--xsmall">
     {% case series.state %}
     {% when "live" %}<span class="label label--small label--inverted">LIVE</span><span class="description">{{ series.status.inning }}</span>
     {% when "final" %}<span class="description">{{ series.status.result }}</span>
@@ -37,7 +53,18 @@
 </div>
 {% endtemplate %}
 
-{% comment %} Current round (AL then NL series from the bracket) as a grid of cards, for the smaller layouts. {% endcomment %}
+{% comment %} One bracket column: round header plus its series (a list, or a single World Series), cards at `size`. {% endcomment %}
+{% template round_column %}
+<div class="mlb-round" style="grid-area: {{ area }}">
+  <span class="label label--small label--underline">{{ header }}</span>
+  <div class="mlb-round__cards">
+    {% for series in list %}{% render "series_card", series: series, size: size, stacked: true %}{% endfor %}
+    {% if single %}{% render "series_card", series: single, size: size, stacked: true %}{% endif %}
+  </div>
+</div>
+{% endtemplate %}
+
+{% comment %} Current round (AL then NL series from the bracket) as a grid of cards filling the view, for the smaller layouts. {% endcomment %}
 {% template current_round %}
 {% if has_data %}
 {% if current.key == "ws" %}
@@ -46,12 +73,12 @@
   {% assign count = bracket.al[current.key].size | plus: bracket.nl[current.key].size %}
 {% endif %}
 {% if count < cols %}{% assign cols = count %}{% endif %}
-<div class="grid grid--cols-{{ cols }} gap--small w--full">
+<div class="mlb-grid grid grid--cols-{{ cols }}{% if cols > 2 %} portrait:grid--cols-2{% endif %} gap--small w--full h--full">
   {% if current.key == "ws" %}
-  {% render "series_card", series: bracket.ws %}
+  {% render "series_card", series: bracket.ws, size: size %}
   {% else %}
-  {% for series in bracket.al[current.key] %}{% render "series_card", series: series %}{% endfor %}
-  {% for series in bracket.nl[current.key] %}{% render "series_card", series: series %}{% endfor %}
+  {% for series in bracket.al[current.key] %}{% render "series_card", series: series, size: size %}{% endfor %}
+  {% for series in bracket.nl[current.key] %}{% render "series_card", series: series, size: size %}{% endfor %}
   {% endif %}
 </div>
 {% else %}

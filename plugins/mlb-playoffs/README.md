@@ -14,8 +14,8 @@ relay/mlb_relay.py --- MLB feed (~22 KB) --->  webhook -> src/transform.py -> te
 - **Relay:** [relay/mlb_relay.py](relay/mlb_relay.py) fetches the postseason series feed from the public [MLB Stats API](https://statsapi.mlb.com) (no API key) and posts it to the plugin's webhook. Standard library only, Python 3.8+. If MLB fails, it posts nothing, so the last good data stays on screen, and it exits non-zero.
 - **Transform:** [src/transform.py](src/transform.py) runs on TRMNL Serverless when the webhook arrives. It counts series wins, finds each series' live or next game, formats times in the TRMNL account's timezone, and orders Division Series next to the Wild Card series feeding them. Its output (~2.5 KB) must fit the webhook limit of 5 KB (10 KB on TRMNL+), so it drops empty values.
 - **Layouts:**
-  - `full`: the whole bracket, AL on the left, NL on the right, World Series in the middle. Once every Division Series team is known, the Wild Card columns drop out (7 columns become 5).
-  - `half_horizontal`, `half_vertical`, `quadrant`: the current round only (earliest round with an unfinished series).
+  - `full`: the whole bracket, AL on the left, NL on the right, World Series in the middle. Once every Division Series team is known, the Wild Card columns drop out (7 columns become 5). On portrait screens it stacks AL, World Series, and NL rows.
+  - `half_horizontal`, `half_vertical`, `quadrant`: the current round only (earliest round with an unfinished series), with cards sized to fill the view.
 
 Card legend: filled dots = series wins (dots = wins needed), large number = live game score, bold = series winner, gray = eliminated. Unresolved slots show the possible teams (`HOU/CWS`) or `TBD`. "Updated" is when TRMNL last received data; if it stops advancing, check the relay.
 
