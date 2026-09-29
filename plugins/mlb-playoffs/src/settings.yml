@@ -6,10 +6,10 @@ static_data: ''
 polling_verb: get
 framework_version: latest
 serverless_language: python
-refresh_interval_floor:
+refresh_interval_floor: ''
 polling_url: ''
 polling_headers: ''
-polling_body:
+polling_body: ''
 id: 491604
 oauth_enabled: 'false'
 oauth_pkce_enabled: 'no'
