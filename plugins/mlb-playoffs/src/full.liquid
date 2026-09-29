@@ -1,0 +1,27 @@
+<div class="layout">
+  {% if has_data %}
+  {% if bracket.show_wc %}
+    {% assign headers = "AL WC,ALDS,ALCS,World Series,NLCS,NLDS,NL WC" | split: "," %}
+    {% assign al_rounds = "wc,ds,cs" | split: "," %}
+    {% assign nl_rounds = "cs,ds,wc" | split: "," %}
+  {% else %}
+    {% assign headers = "ALDS,ALCS,World Series,NLCS,NLDS" | split: "," %}
+    {% assign al_rounds = "ds,cs" | split: "," %}
+    {% assign nl_rounds = "cs,ds" | split: "," %}
+  {% endif %}
+  <div class="mlb-bracket{% unless bracket.show_wc %} mlb-bracket--no-wc{% endunless %}">
+    {% for header in headers %}<span class="label label--small label--underline">{{ header }}</span>{% endfor %}
+    {% for key in al_rounds %}
+    <div class="mlb-round">{% for series in bracket.al[key] %}{% render "series_card", series: series, dots: "xsmall" %}{% endfor %}</div>
+    {% endfor %}
+    <div class="mlb-round">{% if bracket.ws %}{% render "series_card", series: bracket.ws, dots: "xsmall" %}{% endif %}</div>
+    {% for key in nl_rounds %}
+    <div class="mlb-round">{% for series in bracket.nl[key] %}{% render "series_card", series: series, dots: "xsmall" %}{% endfor %}</div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <span class="title">No postseason schedule yet</span>
+  {% endif %}
+</div>
+
+{% render "title_bar", updated: updated, subtitle: current.name %}

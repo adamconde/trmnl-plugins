@@ -1,0 +1,11 @@
+# trmnlp build output
+_build/
+
+# local secrets
+.env
+.env.*
+
+.DS_Store
+
+# Python bytecode
+__pycache__/

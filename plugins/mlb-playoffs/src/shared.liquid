@@ -1,0 +1,67 @@
+<style>
+  .trmnl .mlb-logo { width: 20px; height: 20px; flex: none; filter: grayscale(1) contrast(1.3); }
+  .trmnl .mlb-abbr { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; }
+  .trmnl .mlb-bracket { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-template-rows: auto 1fr; gap: 4px 6px; width: 100%; height: 100%; }
+  .trmnl .mlb-bracket--no-wc { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .trmnl .mlb-round { display: flex; flex-direction: column; justify-content: space-around; gap: 6px; }
+  .trmnl .mlb-round > * { flex: none; }
+  .trmnl .mlb-bracket .mlb-logo { width: 16px; height: 16px; }
+</style>
+
+{% comment %} One team line: logo, abbreviation, series wins as dots (none for unresolved slots), live game score. {% endcomment %}
+{% template team_row %}
+<div class="flex flex--row flex--center-y gap--xsmall">
+  {% if team.placeholder %}<span class="mlb-logo"></span>{% else %}<img class="mlb-logo" src="https://www.mlbstatic.com/team-logos/team-cap-on-light/{{ team.id }}.svg">{% endif %}
+  <span class="mlb-abbr label{% if team.winner %} text--bold{% elsif team.eliminated %} text--gray-4{% endif %}">{{ team.abbr }}</span>
+  {% unless team.placeholder %}
+  {% assign needed = series.best_of | divided_by: 2 | plus: 1 %}
+  <span class="progress-dots progress-dots--{{ dots | default: "small" }} flex flex--row gap--xsmall">
+    {% for i in (1..needed) %}<span class="dot{% if i <= team.wins %} dot--filled{% endif %}"></span>{% endfor %}
+  </span>
+  {% endunless %}
+  {% if series.state == "live" %}<span class="value value--xsmall value--tnums">{{ team.score }}</span>{% endif %}
+</div>
+{% endtemplate %}
+
+{% comment %} Series box: both teams plus live inning, next game time, or result. {% endcomment %}
+{% template series_card %}
+<div class="outline p--1 flex flex--col flex--stretch gap--xsmall">
+  {% for team in series.teams %}{% render "team_row", team: team, series: series, dots: dots %}{% endfor %}
+  <div class="flex {% if dots == "xsmall" %}flex--col{% else %}flex--row{% endif %} flex--center gap--xsmall">
+    {% case series.state %}
+    {% when "live" %}<span class="label label--small label--inverted">LIVE</span><span class="description">{{ series.status.inning }}</span>
+    {% when "final" %}<span class="description">{{ series.status.result }}</span>
+    {% else %}<span class="description">{{ series.status.date }}</span>{% if series.status.time %}<span class="description">{{ series.status.time }}</span>{% endif %}
+    {% endcase %}
+  </div>
+</div>
+{% endtemplate %}
+
+{% comment %} Current round (AL then NL series from the bracket) as a grid of cards, for the smaller layouts. {% endcomment %}
+{% template current_round %}
+{% if has_data %}
+{% if current.key == "ws" %}
+  {% assign count = 1 %}
+{% else %}
+  {% assign count = bracket.al[current.key].size | plus: bracket.nl[current.key].size %}
+{% endif %}
+{% if count < cols %}{% assign cols = count %}{% endif %}
+<div class="grid grid--cols-{{ cols }} gap--small w--full">
+  {% if current.key == "ws" %}
+  {% render "series_card", series: bracket.ws %}
+  {% else %}
+  {% for series in bracket.al[current.key] %}{% render "series_card", series: series %}{% endfor %}
+  {% for series in bracket.nl[current.key] %}{% render "series_card", series: series %}{% endfor %}
+  {% endif %}
+</div>
+{% else %}
+<span class="title">No postseason schedule yet</span>
+{% endif %}
+{% endtemplate %}
+
+{% template title_bar %}
+<div class="title_bar">
+  <span class="title">MLB Playoffs</span>
+  <span class="instance">{% if subtitle %}{{ subtitle }} · {% endif %}Updated {{ updated }}</span>
+</div>
+{% endtemplate %}

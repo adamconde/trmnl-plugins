@@ -1,0 +1,2196 @@
+{
+ "series": [
+  {
+   "series": {
+    "id": "W_1"
+   },
+   "games": [
+    {
+     "gameDate": "2025-10-25T00:00:00Z",
+     "officialDate": "2025-10-24",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 4,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 11,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-26T00:00:00Z",
+     "officialDate": "2025-10-25",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 5,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 1,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-28T00:00:00Z",
+     "officialDate": "2025-10-27",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 5,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 6,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 18,
+      "currentInningOrdinal": "18th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2025-10-29T00:00:00Z",
+     "officialDate": "2025-10-28",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 6,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 2,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2025-10-30T00:00:00Z",
+     "officialDate": "2025-10-29",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 6,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 1,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 5
+    },
+    {
+     "gameDate": "2025-11-01T00:00:00Z",
+     "officialDate": "2025-10-31",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 3,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 1,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 6
+    },
+    {
+     "gameDate": "2025-11-02T00:00:00Z",
+     "officialDate": "2025-11-01",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 5,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 4,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 11,
+      "currentInningOrdinal": "11th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 7
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_2"
+   },
+   "games": [
+    {
+     "gameDate": "2025-09-30T22:08:00Z",
+     "officialDate": "2025-09-30",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 111,
+        "abbreviation": "BOS"
+       },
+       "score": 3,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       },
+       "score": 1,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-01T22:08:00Z",
+     "officialDate": "2025-10-01",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 111,
+        "abbreviation": "BOS"
+       },
+       "score": 3,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       },
+       "score": 4,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-03T00:08:00Z",
+     "officialDate": "2025-10-02",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 111,
+        "abbreviation": "BOS"
+       },
+       "score": 0,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       },
+       "score": 4,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 3
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_1"
+   },
+   "games": [
+    {
+     "gameDate": "2025-09-30T17:08:00Z",
+     "officialDate": "2025-09-30",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 116,
+        "abbreviation": "DET"
+       },
+       "score": 2,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "abbreviation": "CLE"
+       },
+       "score": 1,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-01T17:08:00Z",
+     "officialDate": "2025-10-01",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 116,
+        "abbreviation": "DET"
+       },
+       "score": 1,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "abbreviation": "CLE"
+       },
+       "score": 6,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-02T19:08:00Z",
+     "officialDate": "2025-10-02",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 116,
+        "abbreviation": "DET"
+       },
+       "score": 6,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "abbreviation": "CLE"
+       },
+       "score": 3,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 3
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_4"
+   },
+   "games": [
+    {
+     "gameDate": "2025-09-30T19:08:00Z",
+     "officialDate": "2025-09-30",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 135,
+        "abbreviation": "SD"
+       },
+       "score": 1,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       },
+       "score": 3,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-01T19:08:00Z",
+     "officialDate": "2025-10-01",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 135,
+        "abbreviation": "SD"
+       },
+       "score": 3,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       },
+       "score": 0,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-02T21:08:00Z",
+     "officialDate": "2025-10-02",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 135,
+        "abbreviation": "SD"
+       },
+       "score": 1,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       },
+       "score": 3,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 3
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_3"
+   },
+   "games": [
+    {
+     "gameDate": "2025-10-01T01:08:00Z",
+     "officialDate": "2025-09-30",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 113,
+        "abbreviation": "CIN"
+       },
+       "score": 5,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 10,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-02T01:08:00Z",
+     "officialDate": "2025-10-01",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 113,
+        "abbreviation": "CIN"
+       },
+       "score": 4,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 8,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_2"
+   },
+   "games": [
+    {
+     "gameDate": "2025-10-05T00:38:00Z",
+     "officialDate": "2025-10-04",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 116,
+        "abbreviation": "DET"
+       },
+       "score": 3,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 2,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 11,
+      "currentInningOrdinal": "11th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-06T00:03:00Z",
+     "officialDate": "2025-10-05",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 116,
+        "abbreviation": "DET"
+       },
+       "score": 2,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 3,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-07T20:08:00Z",
+     "officialDate": "2025-10-07",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 8,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 116,
+        "abbreviation": "DET"
+       },
+       "score": 4,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2025-10-08T19:08:00Z",
+     "officialDate": "2025-10-08",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 3,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 116,
+        "abbreviation": "DET"
+       },
+       "score": 9,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2025-10-11T00:08:00Z",
+     "officialDate": "2025-10-10",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 116,
+        "abbreviation": "DET"
+       },
+       "score": 2,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 3,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 15,
+      "currentInningOrdinal": "15th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_1"
+   },
+   "games": [
+    {
+     "gameDate": "2025-10-04T20:08:00Z",
+     "officialDate": "2025-10-04",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       },
+       "score": 1,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 10,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-05T20:08:00Z",
+     "officialDate": "2025-10-05",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       },
+       "score": 7,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 13,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-08T00:08:00Z",
+     "officialDate": "2025-10-07",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 6,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       },
+       "score": 9,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2025-10-08T23:08:00Z",
+     "officialDate": "2025-10-08",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 5,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       },
+       "score": 2,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_4"
+   },
+   "games": [
+    {
+     "gameDate": "2025-10-04T22:38:00Z",
+     "officialDate": "2025-10-04",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 5,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 143,
+        "abbreviation": "PHI"
+       },
+       "score": 3,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-06T22:08:00Z",
+     "officialDate": "2025-10-06",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 4,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 143,
+        "abbreviation": "PHI"
+       },
+       "score": 3,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-09T01:08:00Z",
+     "officialDate": "2025-10-08",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 143,
+        "abbreviation": "PHI"
+       },
+       "score": 8,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 2,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2025-10-09T22:08:00Z",
+     "officialDate": "2025-10-09",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 143,
+        "abbreviation": "PHI"
+       },
+       "score": 1,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 2,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 11,
+      "currentInningOrdinal": "11th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_3"
+   },
+   "games": [
+    {
+     "gameDate": "2025-10-04T18:08:00Z",
+     "officialDate": "2025-10-04",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       },
+       "score": 3,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 9,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-07T01:08:00Z",
+     "officialDate": "2025-10-06",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       },
+       "score": 3,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 7,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-08T21:08:00Z",
+     "officialDate": "2025-10-08",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 3,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       },
+       "score": 4,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2025-10-10T01:08:00Z",
+     "officialDate": "2025-10-09",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 0,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       },
+       "score": 6,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2025-10-12T00:08:00Z",
+     "officialDate": "2025-10-11",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       },
+       "score": 1,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 3,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "L_1"
+   },
+   "games": [
+    {
+     "gameDate": "2025-10-13T00:03:00Z",
+     "officialDate": "2025-10-12",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 3,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 1,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-13T21:03:00Z",
+     "officialDate": "2025-10-13",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 10,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 3,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-16T00:08:00Z",
+     "officialDate": "2025-10-15",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 13,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 4,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2025-10-17T00:33:00Z",
+     "officialDate": "2025-10-16",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 8,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 2,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2025-10-17T22:08:00Z",
+     "officialDate": "2025-10-17",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 2,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 6,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 5
+    },
+    {
+     "gameDate": "2025-10-20T00:03:00Z",
+     "officialDate": "2025-10-19",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 2,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 6,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 6
+    },
+    {
+     "gameDate": "2025-10-21T00:10:00Z",
+     "officialDate": "2025-10-20",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 136,
+        "abbreviation": "SEA"
+       },
+       "score": 3,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 141,
+        "abbreviation": "TOR"
+       },
+       "score": 4,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 7
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "L_2"
+   },
+   "games": [
+    {
+     "gameDate": "2025-10-14T00:08:00Z",
+     "officialDate": "2025-10-13",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 2,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 1,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2025-10-15T00:08:00Z",
+     "officialDate": "2025-10-14",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 5,
+       "isWinner": true
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 1,
+       "isWinner": false
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {
+        "isWinner": false
+       },
+       "away": {
+        "isWinner": true
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2025-10-16T22:08:00Z",
+     "officialDate": "2025-10-16",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 1,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 3,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2025-10-18T00:38:00Z",
+     "officialDate": "2025-10-17",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       },
+       "score": 1,
+       "isWinner": false
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       },
+       "score": 5,
+       "isWinner": true
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {
+        "isWinner": true
+       },
+       "away": {
+        "isWinner": false
+       }
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    }
+   ]
+  }
+ ]
+}

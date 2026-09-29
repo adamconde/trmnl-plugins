@@ -1,0 +1,1955 @@
+{
+ "series": [
+  {
+   "series": {
+    "id": "F_1"
+   },
+   "games": [
+    {
+     "gameDate": "2026-09-29T21:00:00Z",
+     "officialDate": "2026-09-29",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Pre-Game",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 145,
+        "abbreviation": "CWS"
+       },
+       "score": 0
+      },
+      "home": {
+       "team": {
+        "id": 117,
+        "abbreviation": "HOU"
+       },
+       "score": 0
+      }
+     },
+     "linescore": {
+      "currentInning": 1,
+      "currentInningOrdinal": "1st",
+      "inningState": "Top",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-09-30T21:00:00Z",
+     "officialDate": "2026-09-30",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 145,
+        "abbreviation": "CWS"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 117,
+        "abbreviation": "HOU"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-01T21:00:00Z",
+     "officialDate": "2026-10-01",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 145,
+        "abbreviation": "CWS"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 117,
+        "abbreviation": "HOU"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 3
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_2"
+   },
+   "games": [
+    {
+     "gameDate": "2026-09-30T00:00:00Z",
+     "officialDate": "2026-09-29",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 111,
+        "abbreviation": "BOS"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-01T00:00:00Z",
+     "officialDate": "2026-09-30",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 111,
+        "abbreviation": "BOS"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-02T00:00:00Z",
+     "officialDate": "2026-10-01",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 111,
+        "abbreviation": "BOS"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "abbreviation": "NYY"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 3
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_3"
+   },
+   "games": [
+    {
+     "gameDate": "2026-09-29T18:00:00Z",
+     "officialDate": "2026-09-29",
+     "status": {
+      "abstractGameState": "Live",
+      "detailedState": "In Progress",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 143,
+        "abbreviation": "PHI"
+       },
+       "score": 1
+      },
+      "home": {
+       "team": {
+        "id": 144,
+        "abbreviation": "ATL"
+       },
+       "score": 1
+      }
+     },
+     "linescore": {
+      "currentInning": 3,
+      "currentInningOrdinal": "3rd",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-09-30T18:00:00Z",
+     "officialDate": "2026-09-30",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 143,
+        "abbreviation": "PHI"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 144,
+        "abbreviation": "ATL"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-01T18:00:00Z",
+     "officialDate": "2026-10-01",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 143,
+        "abbreviation": "PHI"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 144,
+        "abbreviation": "ATL"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 3
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_4"
+   },
+   "games": [
+    {
+     "gameDate": "2026-09-30T02:00:00Z",
+     "officialDate": "2026-09-29",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 135,
+        "abbreviation": "SD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-01T02:00:00Z",
+     "officialDate": "2026-09-30",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 135,
+        "abbreviation": "SD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-02T02:00:00Z",
+     "officialDate": "2026-10-01",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 112,
+        "abbreviation": "CHC"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 135,
+        "abbreviation": "SD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 3
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_2"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-03T07:33:00Z",
+     "officialDate": "2026-10-03",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5528,
+        "abbreviation": "HOU/CWS",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "abbreviation": "CLE"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-05T07:33:00Z",
+     "officialDate": "2026-10-05",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5528,
+        "abbreviation": "HOU/CWS",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "abbreviation": "CLE"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-07T07:33:00Z",
+     "officialDate": "2026-10-07",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 114,
+        "abbreviation": "CLE"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5528,
+        "abbreviation": "HOU/CWS",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-08T07:33:00Z",
+     "officialDate": "2026-10-08",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 114,
+        "abbreviation": "CLE"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5528,
+        "abbreviation": "HOU/CWS",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-10T07:33:00Z",
+     "officialDate": "2026-10-10",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5528,
+        "abbreviation": "HOU/CWS",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "abbreviation": "CLE"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_1"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-03T07:33:00Z",
+     "officialDate": "2026-10-03",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5529,
+        "abbreviation": "NYY/BOS",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 139,
+        "abbreviation": "TB"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-05T07:33:00Z",
+     "officialDate": "2026-10-05",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5529,
+        "abbreviation": "NYY/BOS",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 139,
+        "abbreviation": "TB"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-07T07:33:00Z",
+     "officialDate": "2026-10-07",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 139,
+        "abbreviation": "TB"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5529,
+        "abbreviation": "NYY/BOS",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-08T07:33:00Z",
+     "officialDate": "2026-10-08",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 139,
+        "abbreviation": "TB"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5529,
+        "abbreviation": "NYY/BOS",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-10T07:33:00Z",
+     "officialDate": "2026-10-10",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5529,
+        "abbreviation": "NYY/BOS",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 139,
+        "abbreviation": "TB"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_4"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-03T10:33:00Z",
+     "officialDate": "2026-10-03",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5532,
+        "abbreviation": "ATL/PHI",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-04T10:33:00Z",
+     "officialDate": "2026-10-04",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5532,
+        "abbreviation": "ATL/PHI",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-06T07:33:00Z",
+     "officialDate": "2026-10-06",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5532,
+        "abbreviation": "ATL/PHI",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-07T07:33:00Z",
+     "officialDate": "2026-10-07",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5532,
+        "abbreviation": "ATL/PHI",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-09T10:33:00Z",
+     "officialDate": "2026-10-09",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5532,
+        "abbreviation": "ATL/PHI",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "abbreviation": "LAD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_3"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-03T08:33:00Z",
+     "officialDate": "2026-10-03",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5533,
+        "abbreviation": "SD/CHC",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-04T08:33:00Z",
+     "officialDate": "2026-10-04",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5533,
+        "abbreviation": "SD/CHC",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-06T07:33:00Z",
+     "officialDate": "2026-10-06",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5533,
+        "abbreviation": "SD/CHC",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-07T07:33:00Z",
+     "officialDate": "2026-10-07",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5533,
+        "abbreviation": "SD/CHC",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-09T08:33:00Z",
+     "officialDate": "2026-10-09",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5533,
+        "abbreviation": "SD/CHC",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "abbreviation": "MIL"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "L_2"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-11T07:33:00Z",
+     "officialDate": "2026-10-11",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5525,
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5517,
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-12T07:33:00Z",
+     "officialDate": "2026-10-12",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5525,
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5517,
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-14T07:33:00Z",
+     "officialDate": "2026-10-14",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5517,
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5525,
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-15T07:33:00Z",
+     "officialDate": "2026-10-15",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5517,
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5525,
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-16T07:33:00Z",
+     "officialDate": "2026-10-16",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5517,
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5525,
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 5
+    },
+    {
+     "gameDate": "2026-10-18T07:33:00Z",
+     "officialDate": "2026-10-18",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5525,
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5517,
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 6
+    },
+    {
+     "gameDate": "2026-10-19T07:33:00Z",
+     "officialDate": "2026-10-19",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5525,
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5517,
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 7
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "L_1"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-12T07:33:00Z",
+     "officialDate": "2026-10-12",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5521,
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5513,
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-13T07:33:00Z",
+     "officialDate": "2026-10-13",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5521,
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5513,
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-15T07:33:00Z",
+     "officialDate": "2026-10-15",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5513,
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5521,
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-16T07:33:00Z",
+     "officialDate": "2026-10-16",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5513,
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5521,
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-17T07:33:00Z",
+     "officialDate": "2026-10-17",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5513,
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5521,
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 5
+    },
+    {
+     "gameDate": "2026-10-19T07:33:00Z",
+     "officialDate": "2026-10-19",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5521,
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5513,
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 6
+    },
+    {
+     "gameDate": "2026-10-20T07:33:00Z",
+     "officialDate": "2026-10-20",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5521,
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5513,
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 7
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "W_1"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-23T07:33:00Z",
+     "officialDate": "2026-10-23",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2711,
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2710,
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-24T07:33:00Z",
+     "officialDate": "2026-10-24",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2711,
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2710,
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-26T07:33:00Z",
+     "officialDate": "2026-10-26",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2710,
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2711,
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-27T07:33:00Z",
+     "officialDate": "2026-10-27",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2710,
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2711,
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-28T07:33:00Z",
+     "officialDate": "2026-10-28",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2710,
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2711,
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 5
+    },
+    {
+     "gameDate": "2026-10-30T07:33:00Z",
+     "officialDate": "2026-10-30",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2711,
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2710,
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 6
+    },
+    {
+     "gameDate": "2026-10-31T07:33:00Z",
+     "officialDate": "2026-10-31",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2711,
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2710,
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 7
+    }
+   ]
+  }
+ ]
+}

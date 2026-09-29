@@ -1,0 +1,18 @@
+---
+strategy: webhook
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: latest
+serverless_language: python
+refresh_interval_floor:
+polling_url: ''
+polling_headers: ''
+polling_body:
+id: 491604
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+name: MLB Playoffs
+description: 2026 MLB postseason bracket
+refresh_interval: 15

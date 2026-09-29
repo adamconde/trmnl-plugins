@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+#
+# Scaffold a new TRMNL plugin under plugins/<name> using `trmnlp init`.
+# Uses a local trmnlp gem if installed, otherwise the trmnl/trmnlp Docker image.
+#
+# Usage: bin/new-plugin <name>
+#
+set -euo pipefail
+
+name="${1:-}"
+if [[ ! "$name" =~ ^[a-z0-9][a-z0-9_-]*$ ]]; then
+    echo "Usage: bin/new-plugin <name>  (lowercase letters, digits, - and _)" >&2
+    exit 1
+fi
+
+root="$(cd "$(dirname "$0")/.." && pwd)"
+dest="$root/plugins/$name"
+if [[ -e "$dest" ]]; then
+    echo "plugins/$name already exists" >&2
+    exit 1
+fi
+
+if command -v trmnlp &> /dev/null; then
+    (cd "$root/plugins" && trmnlp init "$name")
+elif command -v docker &> /dev/null; then
+    docker run --rm --pull always \
+        --volume "$root/plugins:/plugin" \
+        trmnl/trmnlp init "$name"
+else
+    echo "Install the trmnl_preview gem (Ruby 3.4+) or Docker." >&2
+    exit 1
+fi
+
+# The monorepo owns git and CI; drop the per-plugin copies trmnlp creates.
+rm -rf "$dest/.git" "$dest/.github"
+
+echo
+echo "Created plugins/$name. Preview it with:"
+echo "    cd plugins/$name && bin/trmnlp serve    # http://localhost:4567"
