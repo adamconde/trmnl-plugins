@@ -35,7 +35,7 @@ custom_fields:
 - keyname: author_bio
   name: About This Plugin
   field_type: author_bio
-  description: MLB postseason bracket with team logos, series records, next game times and live scores.<br/><br/>MLB blocks TRMNL's servers, so this plugin needs a small relay script on your home network (a NAS or any Linux machine) that posts data to the plugin's webhook. See the <a href="https://github.com/adamconde/trmnl-plugins/blob/main/plugins/mlb-playoffs/README.md">setup instructions</a>.
+  description: MLB postseason bracket with team logos, series records, next game times and live scores.<br/><br/>MLB blocks TRMNL's servers, so this plugin needs a small relay script on your home network (a NAS or any Linux machine) that posts data to the plugin's webhook. See the <a href="https://github.com/adamconde/trmnl-plugins/blob/main/plugins/mlb-playoffs/README.md">setup instructions</a>.<br/><br/>Version 1.0.0
   learn_more_url: https://github.com/adamconde/trmnl-plugins/blob/main/plugins/mlb-playoffs/README.md
 name: MLB Playoffs
 description: MLB postseason bracket

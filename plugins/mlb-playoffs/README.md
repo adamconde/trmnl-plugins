@@ -140,3 +140,9 @@ Preview times use `time_zone` in `.trmnlp.yml`. To preview recorded data, post a
 ## Next season
 
 Nothing to change: the relay requests the current year's postseason. Off-season, MLB returns no series and the plugin shows "No postseason schedule yet" until the bracket is published (usually late September).
+
+## Version history
+
+The version appears at the end of **About This Plugin** (`author_bio` in [src/settings.yml](src/settings.yml)). Bump it there and add a line here with each release.
+
+- **1.0.0** (2026-09-29): first versioned release. Full bracket with portrait layout, current-round views for half and quadrant, webhook relay for home networks.
