@@ -7,37 +7,7 @@ polling_verb: get
 framework_version: latest
 serverless_language: python
 refresh_interval_floor: ''
-polling_url: |-
-  {%- comment -%} Poll only what the selected metrics need (order matches SOURCES in transform.py). {%- endcomment -%}
-  {%- assign m = metrics | join: ',' | remove: ' ' | prepend: ',' | append: ',' -%}
-  {%- if m == ',,' -%}{%- assign m = ',readiness,sleep,activity,stress,' -%}{%- endif -%}
-  {%- if m contains ',readiness,' or m contains ',temperature,' -%}
-  https://api.ouraring.com/v2/usercollection/daily_readiness?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,temperature_deviation
-  {% endif -%}
-  {%- if m contains ',sleep,' -%}
-  https://api.ouraring.com/v2/usercollection/daily_sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score
-  {% endif -%}
-  {%- if m contains ',activity,' or m contains ',steps,' -%}
-  https://api.ouraring.com/v2/usercollection/daily_activity?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,steps,equivalent_walking_distance,target_meters
-  {% endif -%}
-  {%- if m contains ',stress,' -%}
-  https://api.ouraring.com/v2/usercollection/daily_stress?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,day_summary,stress_high,recovery_high
-  {% endif -%}
-  {%- if m contains ',total_sleep,' or m contains ',resting_hr,' or m contains ',hrv,' -%}
-  https://api.ouraring.com/v2/usercollection/sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,type,total_sleep_duration,lowest_heart_rate,average_hrv
-  {% endif -%}
-  {%- if m contains ',resilience,' -%}
-  https://api.ouraring.com/v2/usercollection/daily_resilience?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}
-  {% endif -%}
-  {%- if m contains ',spo2,' -%}
-  https://api.ouraring.com/v2/usercollection/daily_spo2?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,spo2_percentage
-  {% endif -%}
-  {%- if m contains ',cardio_age,' -%}
-  https://api.ouraring.com/v2/usercollection/daily_cardiovascular_age?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,vascular_age
-  {% endif -%}
-  {%- if m contains ',vo2_max,' -%}
-  https://api.ouraring.com/v2/usercollection/vO2_max?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,vo2_max
-  {% endif -%}
+polling_url: "{%- comment -%} Poll only what the selected metrics need (order matches SOURCES in transform.py). {%- endcomment -%}\r\n{%- assign m = metrics | join: ',' | remove: ' ' | prepend: ',' | append: ',' -%}\r\n{%- if m == ',,' -%}{%- assign m = ',readiness,sleep,activity,stress,' -%}{%- endif -%}\r\n{%- if m contains ',readiness,' or m contains ',temperature,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/daily_readiness?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,temperature_deviation\r\n{% endif -%}\r\n{%- if m contains ',sleep,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/daily_sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score\r\n{% endif -%}\r\n{%- if m contains ',activity,' or m contains ',steps,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/daily_activity?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,steps,equivalent_walking_distance,target_meters\r\n{% endif -%}\r\n{%- if m contains ',stress,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/daily_stress?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,day_summary,stress_high,recovery_high\r\n{% endif -%}\r\n{%- if m contains ',total_sleep,' or m contains ',resting_hr,' or m contains ',hrv,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,type,total_sleep_duration,lowest_heart_rate,average_hrv\r\n{% endif -%}\r\n{%- if m contains ',resilience,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/daily_resilience?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}\r\n{% endif -%}\r\n{%- if m contains ',spo2,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/daily_spo2?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,spo2_percentage\r\n{% endif -%}\r\n{%- if m contains ',cardio_age,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/daily_cardiovascular_age?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,vascular_age\r\n{% endif -%}\r\n{%- if m contains ',vo2_max,' -%}\r\nhttps://api.ouraring.com/v2/usercollection/vO2_max?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,vo2_max\r\n{% endif -%}"
 polling_headers: authorization=Bearer {{ oauth_access_token }}
 polling_body: ''
 id: 491892
@@ -96,4 +66,5 @@ custom_fields:
   - stress
 name: Oura
 description: Oura Ring scores and trends
+recipe_overview: "Oura turns your Oura Ring data into a glanceable dashboard on your TRMNL. Each metric is drawn as a ring, like the ones in the Oura app, with the value in the center and a row of bars underneath showing your last seven days.\r\n\r\nBy default it shows your Readiness, Sleep, Activity and Stress. Score rings fill to the score and carry Oura's rating underneath, from Optimal to Pay attention. Stress shows whether your day was restored, normal or stressful, with time spent stressed and restored. The full-screen view also compares today with your weekly average, such as \"+4 vs 7-day avg\".\r\n\r\nYou can pick other metrics instead, or add them: Resilience, Total sleep, Steps toward your daily activity goal, Resting heart rate, HRV, Blood oxygen, Cardiovascular age, Cardio capacity (VO2 max) and Temperature deviation. Full screen fits up to eight metrics, half screen four to six, and a quarter screen four, so it sits comfortably in a mashup with your other plugins.\r\n\r\nSleep scores appear after you open the Oura app and sync in the morning. Until then, each tile shows the previous day and labels it.\r\n\r\nSetup takes a few minutes. Oura requires OAuth, so you create a free Oura API application, paste its client ID and secret into the plugin, and connect your account. Step-by-step instructions are in the GitHub README linked from this recipe."
 refresh_interval: 60
