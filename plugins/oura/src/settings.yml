@@ -6,6 +6,7 @@ static_data: ''
 polling_verb: get
 framework_version: latest
 serverless_language: python
+refresh_interval_floor: ''
 polling_url: |-
   https://api.ouraring.com/v2/usercollection/daily_readiness?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,temperature_deviation
   https://api.ouraring.com/v2/usercollection/daily_sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score
@@ -24,8 +25,21 @@ oauth_pkce_enabled: 'yes'
 oauth_authorize_url: https://cloud.ouraring.com/oauth/authorize
 oauth_token_url: https://api.ouraring.com/oauth/token
 oauth_scopes: daily spo2 heart_health
-oauth_scope_separator: ' '
+oauth_scope_separator: " "
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
 oauth_token_site: https://api.ouraring.com
+oauth_token_params: ''
+oauth_token_request_auth_method: ''
+oauth_body_format: ''
+oauth_token_response_metadata: ''
+oauth_authorization_method: ''
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: ''
+oauth_fixed_expiry_ms: ''
 custom_fields:
 - keyname: author_bio
   name: About This Plugin
