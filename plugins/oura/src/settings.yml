@@ -7,16 +7,7 @@ polling_verb: get
 framework_version: latest
 serverless_language: python
 refresh_interval_floor: ''
-polling_url: |-
-  https://api.ouraring.com/v2/usercollection/daily_readiness?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,temperature_deviation
-  https://api.ouraring.com/v2/usercollection/daily_sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score
-  https://api.ouraring.com/v2/usercollection/daily_activity?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,steps,equivalent_walking_distance,target_meters
-  https://api.ouraring.com/v2/usercollection/daily_stress?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,day_summary,stress_high,recovery_high
-  https://api.ouraring.com/v2/usercollection/sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,type,total_sleep_duration,lowest_heart_rate,average_hrv
-  https://api.ouraring.com/v2/usercollection/daily_resilience?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}
-  https://api.ouraring.com/v2/usercollection/daily_spo2?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,spo2_percentage
-  https://api.ouraring.com/v2/usercollection/daily_cardiovascular_age?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,vascular_age
-  https://api.ouraring.com/v2/usercollection/vO2_max?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,vo2_max
+polling_url: "https://api.ouraring.com/v2/usercollection/daily_readiness?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,temperature_deviation\r\nhttps://api.ouraring.com/v2/usercollection/daily_sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score\r\nhttps://api.ouraring.com/v2/usercollection/daily_activity?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,score,steps,equivalent_walking_distance,target_meters\r\nhttps://api.ouraring.com/v2/usercollection/daily_stress?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,day_summary,stress_high,recovery_high\r\nhttps://api.ouraring.com/v2/usercollection/sleep?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,type,total_sleep_duration,lowest_heart_rate,average_hrv\r\nhttps://api.ouraring.com/v2/usercollection/daily_resilience?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}\r\nhttps://api.ouraring.com/v2/usercollection/daily_spo2?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,spo2_percentage\r\nhttps://api.ouraring.com/v2/usercollection/daily_cardiovascular_age?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,vascular_age\r\nhttps://api.ouraring.com/v2/usercollection/vO2_max?start_date={{ 'now' | date: '%s' | minus: 604800 | date: '%Y-%m-%d' }}&end_date={{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}&fields=day,vo2_max"
 polling_headers: authorization=Bearer {{ oauth_access_token }}
 polling_body: ''
 id: 491892
@@ -25,7 +16,7 @@ oauth_pkce_enabled: 'yes'
 oauth_authorize_url: https://cloud.ouraring.com/oauth/authorize
 oauth_token_url: https://api.ouraring.com/oauth/token
 oauth_scopes: daily spo2 heart_health
-oauth_scope_separator: " "
+oauth_scope_separator: ''
 oauth_refresh_url: ''
 oauth_auth_params: ''
 oauth_token_headers: ''
