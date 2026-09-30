@@ -60,7 +60,6 @@ class Scores(unittest.TestCase):
     def test_readiness_ring_and_band(self):
         r = self.t["readiness"]
         self.assertEqual((r["value"], r["ring"], r["pct"], r["status"]), ("84", "arc", 84, "Good"))
-        self.assertNotIn("long", r)
         self.assertNotIn("stale", r)
 
     def test_delta_against_other_days(self):
@@ -87,7 +86,7 @@ class OtherMetrics(unittest.TestCase):
 
     def test_stress_in_progress_shows_time_so_far(self):
         s = self.t["stress"]
-        self.assertEqual((s["value"], s["status"], s["ring"], s["long"]), ("45m", "So far today", "segments", True))
+        self.assertEqual((s["value"], s["status"], s["ring"]), ("45m", "So far today", "segments"))
         self.assertFalse(any(seg.get("filled") for seg in s["segments"]))
         self.assertEqual(s["note"], "45m stressed · 1h 0m restored")
 
@@ -100,7 +99,7 @@ class OtherMetrics(unittest.TestCase):
 
     def test_resilience_fills_up_to_level(self):
         r = self.t["resilience"]
-        self.assertEqual((r["value"], r["status"], r["long"]), ("Solid", "Level 3 of 5", True))
+        self.assertEqual((r["value"], r["status"]), ("Solid", "Level 3 of 5"))
         self.assertEqual([bool(seg.get("filled")) for seg in r["segments"]], [True, True, True, False, False])
         self.assertEqual(r["segments"][0], {"offset": -2.0, "length": 16.0, "filled": True})
 
@@ -124,6 +123,21 @@ class OtherMetrics(unittest.TestCase):
         self.assertEqual(c["value"], "37")
         self.assertEqual(c["stale"], f"{today() - timedelta(days=1):%a}")
         self.assertEqual(sum(1 for b in c["bars"] if b.get("empty")), 5)
+
+
+class TextSize(unittest.TestCase):
+    def test_short_numbers_use_the_largest_size(self):
+        self.assertEqual(transform._text_size("84"), transform.TEXT_MAX_SIZE)
+
+    def test_words_shrink_to_fit_the_ring(self):
+        for word in ("Normal", "Stressful", "Exceptional", "Restored", "7h 32m", "12,876", "−0.4"):
+            size = transform._text_size(word)
+            self.assertLess(size, transform.TEXT_MAX_SIZE, word)
+            width = size * sum(transform.CHAR_EM.get(c, 0.65) for c in word)
+            self.assertLessEqual(width, transform.TEXT_WIDTH + 0.1, word)
+
+    def test_every_tile_has_a_size(self):
+        self.assertTrue(all(t["size"] > 0 for t in run(metrics=list(transform.CATALOG))["tiles"]))
 
 
 class MissingData(unittest.TestCase):

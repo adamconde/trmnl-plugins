@@ -12,8 +12,9 @@ Returned merge variables:
     date      viewer's today, e.g. "Tue, Sep 29"
     updated   local time of this refresh, e.g. "7:15 AM"
 
-Each tile: {key, label, value, unit, long, status, note, stale, ring, pct, segments, bars}
-    value     center text ("84", "7h 32m", "Normal"); ``long`` unless it is 1-3 digits (smaller font)
+Each tile: {key, label, value, size, unit, status, note, stale, ring, pct, segments, bars}
+    value     center text ("84", "7h 32m", "Normal")
+    size      font size for ``value`` in the ring's 100-unit SVG box, small enough to fit inside it
     ring      "arc" (``pct`` 0-100 filled), "segments" (``segments`` [{offset, length, filled}]
               in pathLength-100 units), or "plain" (outline only)
     status    word under the ring ("Optimal", "62% of goal"), may be absent
@@ -22,6 +23,7 @@ Each tile: {key, label, value, unit, long, status, note, stale, ring, pct, segme
     bars      7 days ending today, oldest first: {height 0-100, current, empty}
 """
 
+import math
 from datetime import date, datetime, timedelta, timezone
 
 try:
@@ -51,6 +53,18 @@ RESILIENCE_LEVELS = ("limited", "adequate", "solid", "strong", "exceptional")
 SLEEP_TARGET_SECONDS = 8 * 3600
 DAYS = 7
 SEGMENT_GAP = 4  # gap between ring segments, in pathLength-100 units
+# Ring center text, in the ring's 100-unit SVG box: at most this big, and no wider than
+# TEXT_WIDTH (inside the ring's inner edge at radius 40).
+TEXT_MAX_SIZE = 44
+TEXT_WIDTH = 62
+# Advance widths (em) of Inter at weight 400, the framework's value font, measured in Chrome.
+# Characters not listed count as 0.65em, about the widest common glyph.
+CHAR_EM = {
+    **dict.fromkeys("0123456789+−", 0.645), ",": 0.269, ".": 0.269, " ": 0.25, "%": 0.844,
+    "a": 0.518, "b": 0.565, "c": 0.523, "d": 0.565, "e": 0.536, "f": 0.28, "g": 0.565, "h": 0.547,
+    "i": 0.206, "l": 0.206, "m": 0.839, "n": 0.547, "o": 0.549, "p": 0.565, "r": 0.322, "s": 0.475,
+    "t": 0.28, "u": 0.547, "v": 0.512, "A": 0.662, "E": 0.58, "L": 0.535, "N": 0.71, "R": 0.632, "S": 0.614,
+}
 
 
 def run(input):
@@ -152,7 +166,7 @@ def _tile(key, values, today):
         "bars": _bars(days, {d: number(v) for d, v in values.items()}, shown),
     }
     tile.update(_FORMAT[key](current, [number(v) for v in others]))
-    tile["long"] = len(tile["value"]) > 3 or not tile["value"].isdigit()
+    tile["size"] = _text_size(tile["value"])
     return tile
 
 
@@ -270,6 +284,12 @@ def _segments(count, filled):
     step = 100 / count
     return [{"offset": round(-(i * step + SEGMENT_GAP / 2), 2), "length": round(step - SEGMENT_GAP, 2),
              "filled": i in filled} for i in range(count)]
+
+
+def _text_size(text):
+    """Font size that fits ``text`` across the ring's inner circle, capped at TEXT_MAX_SIZE."""
+    em = sum(CHAR_EM.get(c, 0.65) for c in text)
+    return math.floor(10 * min(TEXT_MAX_SIZE, TEXT_WIDTH / em)) / 10 if em else TEXT_MAX_SIZE  # round down to stay inside
 
 
 def _duration(seconds):

@@ -16,6 +16,9 @@
   <circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="1.5"/>
   <circle cx="50" cy="50" r="39" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="1.5 4"/>
   {% endcase %}
+  {% comment %} Value (and unit) in ring units, so they scale with the ring; the transform sizes the value to fit. {% endcomment %}
+  <text x="50" y="{% if show_unit %}46{% else %}50{% endif %}" text-anchor="middle" dominant-baseline="central" font-family="Inter Variable, Inter, sans-serif" font-size="{{ tile.size }}" fill="black">{{ tile.value }}</text>
+  {% if show_unit %}<text x="50" y="69" text-anchor="middle" dominant-baseline="central" font-family="Inter Variable, Inter, sans-serif" font-size="10" fill="black">{{ tile.unit }}</text>{% endif %}
 </svg>
 {% endtemplate %}
 
@@ -37,19 +40,16 @@
 {% comment %} One metric: label, ring with the value inside, status, then (lg/md) 7-day bars and (lg) the weekly comparison. {% endcomment %}
 {% template tile %}
 {% case size %}
-  {% when "lg" %}{% assign label_class = "title" %}{% assign value_class = "value--xxlarge" %}{% assign long_class = "value--large" %}{% assign status_class = "label" %}{% assign bars_h = "h--16 lg:h--32" %}
-  {% when "sm" %}{% assign label_class = "label label--small" %}{% assign value_class = "value--small" %}{% assign long_class = "value--xxsmall" %}
-  {% else %}{% assign label_class = "label" %}{% assign value_class = "value--large" %}{% assign long_class = "value--small" %}{% assign status_class = "label label--small" %}{% assign bars_h = "h--6 lg:h--12" %}
+  {% when "lg" %}{% assign label_class = "title" %}{% assign status_class = "label" %}{% assign bars_h = "h--16 lg:h--32" %}
+  {% when "sm" %}{% assign label_class = "label label--small" %}
+  {% else %}{% assign label_class = "label" %}{% assign status_class = "label label--small" %}{% assign bars_h = "h--6 lg:h--12" %}
 {% endcase %}
 <div class="flex flex--col flex--center-x gap--xsmall w--full h--full">
   <span class="{{ label_class }}">{{ tile.label }}</span>
-  {% comment %} The ring and its center text are both laid over the space the ring grows into. {% endcomment %}
+  {% comment %} The ring is laid over the space it grows into, so it never pushes the tile taller. {% endcomment %}
   <div class="relative grow w--full">
-    {% render "ring", tile: tile %}
-    <div class="absolute inset--0 flex flex--col flex--center">
-      <span class="value {% if tile.long %}{{ long_class }}{% else %}{{ value_class }}{% endif %} value--tnums">{{ tile.value }}</span>
-      {% if tile.unit and size != "sm" %}<span class="label label--small">{{ tile.unit }}</span>{% endif %}
-    </div>
+    {% if tile.unit and size != "sm" %}{% assign show_unit = true %}{% else %}{% assign show_unit = false %}{% endif %}
+    {% render "ring", tile: tile, show_unit: show_unit %}
   </div>
   {% if size != "sm" %}
   {% if tile.status or tile.stale %}
