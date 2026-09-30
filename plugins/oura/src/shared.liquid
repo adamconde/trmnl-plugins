@@ -1,0 +1,84 @@
+{% comment %}
+  Ring gauge in a 100x100 box. Circles use pathLength 100, so dash lengths are percentages.
+  arc: thin track plus a thick arc for pct. segments: thick when filled, thin otherwise. plain: thin outline.
+{% endcomment %}
+{% template ring %}
+<svg viewBox="0 0 100 100" class="absolute inset--0 w--full h--full">
+  {% case tile.ring %}
+  {% when "segments" %}
+  {% for seg in tile.segments %}
+  <circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="{% if seg.filled %}8{% else %}1.5{% endif %}" pathLength="100" stroke-dasharray="{{ seg.length }} 100" stroke-dashoffset="{{ seg.offset }}" transform="rotate(-90 50 50)"/>
+  {% endfor %}
+  {% when "arc" %}
+  <circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="1.5"/>
+  {% if tile.pct > 0 %}<circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="8" pathLength="100" stroke-dasharray="{{ tile.pct }} 100" stroke-linecap="{% if tile.pct < 100 %}round{% else %}butt{% endif %}" transform="rotate(-90 50 50)"/>{% endif %}
+  {% else %}
+  <circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="1.5"/>
+  <circle cx="50" cy="50" r="39" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="1.5 4"/>
+  {% endcase %}
+</svg>
+{% endtemplate %}
+
+{% comment %} 7-day bars, oldest first; the day shown in the ring is solid, the rest outlined, missing days a baseline tick. {% endcomment %}
+{% template bars %}
+<svg viewBox="0 0 70 20" preserveAspectRatio="none" shape-rendering="crispEdges" class="w--full {{ height }}">
+  {% for bar in tile.bars %}
+  {% assign x = forloop.index0 | times: 10 | plus: 1.5 %}
+  {% if bar.empty %}
+  <rect x="{{ x }}" y="19" width="7" height="1" fill="black"/>
+  {% else %}
+  {% assign h = bar.height | times: 0.19 %}
+  <rect x="{{ x }}" y="{{ 19.5 | minus: h }}" width="7" height="{{ h }}" fill="{% if bar.current %}black{% else %}white{% endif %}" stroke="black" stroke-width="1" vector-effect="non-scaling-stroke"/>
+  {% endif %}
+  {% endfor %}
+</svg>
+{% endtemplate %}
+
+{% comment %} One metric: label, ring with the value inside, status, then (lg/md) 7-day bars and (lg) the weekly comparison. {% endcomment %}
+{% template tile %}
+{% case size %}
+  {% when "lg" %}{% assign label_class = "title" %}{% assign value_class = "value--xxlarge" %}{% assign long_class = "value--large" %}{% assign status_class = "label" %}{% assign bars_h = "h--16 lg:h--32" %}
+  {% when "sm" %}{% assign label_class = "label label--small" %}{% assign value_class = "value--small" %}{% assign long_class = "value--xxsmall" %}
+  {% else %}{% assign label_class = "label" %}{% assign value_class = "value--large" %}{% assign long_class = "value--small" %}{% assign status_class = "label label--small" %}{% assign bars_h = "h--6 lg:h--12" %}
+{% endcase %}
+<div class="flex flex--col flex--center-x gap--xsmall w--full h--full">
+  <span class="{{ label_class }}">{{ tile.label }}</span>
+  {% comment %} The ring and its center text are both laid over the space the ring grows into. {% endcomment %}
+  <div class="relative grow w--full">
+    {% render "ring", tile: tile %}
+    <div class="absolute inset--0 flex flex--col flex--center">
+      <span class="value {% if tile.long %}{{ long_class }}{% else %}{{ value_class }}{% endif %} value--tnums">{{ tile.value }}</span>
+      {% if tile.unit and size != "sm" %}<span class="label label--small">{{ tile.unit }}</span>{% endif %}
+    </div>
+  </div>
+  {% if size != "sm" %}
+  {% if tile.status or tile.stale %}
+  <span class="{{ status_class }}{% if tile.status == 'Pay attention' %} label--inverted{% endif %}">{{ tile.status }}{% if tile.status and tile.stale %} · {% endif %}{% if tile.stale %}{{ tile.stale }}{% endif %}</span>
+  {% endif %}
+  {% render "bars", tile: tile, height: bars_h %}
+  {% endif %}
+  {% if size == "lg" and tile.note %}<span class="description w--full text--center" data-clamp="1">{{ tile.note }}</span>{% endif %}
+</div>
+{% endtemplate %}
+
+{% comment %} `tiles` holds the metrics picked in the `metrics` field, filtered and ordered by src/transform.py. {% endcomment %}
+{% comment %} Up to `max` tiles in a grid of `cols` columns (2 in portrait when wider), or the empty state. {% endcomment %}
+{% template tiles %}
+{% if has_data %}
+<div class="grid grid--cols-{{ cols }}{% if cols > 2 %} portrait:grid--cols-2{% endif %} gap--medium w--full h--full">
+  {% for tile in tiles limit: max %}{% render "tile", tile: tile, size: size %}{% endfor %}
+</div>
+{% else %}
+<div class="flex flex--col flex--center gap--small w--full h--full">
+  <span class="title">No Oura data yet</span>
+  <span class="description text--center">Connect your Oura account in the plugin settings, then sync your ring in the Oura app.</span>
+</div>
+{% endif %}
+{% endtemplate %}
+
+{% template title_bar %}
+<div class="title_bar">
+  <span class="title">Oura</span>
+  <span class="instance">{{ date }} · Updated {{ updated }}</span>
+</div>
+{% endtemplate %}

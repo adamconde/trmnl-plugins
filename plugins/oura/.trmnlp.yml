@@ -1,0 +1,23 @@
+# TRMNLP configuration
+# {{ env.VARIABLE }} interpolation is available here
+---
+# auto-reload when files change (`watch: false` to disable)
+watch:
+  - .trmnlp.yml
+  - src
+
+# preview timezone; on a device, "today" follows the TRMNL account's timezone
+time_zone: America/New_York
+
+# values of custom fields (defined in src/settings.yml)
+# OAuth client credentials come from TRMNL_OAUTH_CLIENT_ID / TRMNL_OAUTH_CLIENT_SECRET (see README)
+custom_fields:
+  metrics:
+    - readiness
+    - sleep
+    - activity
+    - stress
+
+# override variables
+variables:
+  trmnl: {}

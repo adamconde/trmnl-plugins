@@ -1,0 +1,8 @@
+<div class="layout">
+  {% comment %} Up to 4 tiles in one large row; 5-8 in two medium rows. {% endcomment %}
+  {% assign n = tiles.size | at_most: 8 %}
+  {% if n <= 4 %}{% assign cols = n | at_least: 1 %}{% assign size = "lg" %}{% else %}{% assign cols = n | plus: 1 | divided_by: 2 %}{% assign size = "md" %}{% endif %}
+  {% render "tiles", has_data: has_data, tiles: tiles, max: 8, cols: cols, size: size %}
+</div>
+
+{% render "title_bar", date: date, updated: updated %}

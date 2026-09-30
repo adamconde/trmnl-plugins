@@ -1,0 +1,6 @@
+<div class="layout">
+  {% assign cols = tiles.size | at_most: 5 | at_least: 1 %}
+  {% render "tiles", has_data: has_data, tiles: tiles, max: 5, cols: cols, size: "md" %}
+</div>
+
+{% render "title_bar", date: date, updated: updated %}
