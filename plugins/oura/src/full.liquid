@@ -1,8 +1,20 @@
+{% render "styles" %}
 <div class="layout">
-  {% comment %} Up to 4 tiles in one large row; 5-8 in two medium rows. {% endcomment %}
+  {% comment %}
+    Up to 5 metrics: a row of score circles over the first metric's week, like Oura's Today tab
+    (in portrait, 5 circles take two rows of 3). 6-8: two rows of circles with bars.
+  {% endcomment %}
   {% assign n = tiles.size | at_most: 8 %}
-  {% if n <= 4 %}{% assign cols = n | at_least: 1 %}{% assign size = "lg" %}{% else %}{% assign cols = n | plus: 1 | divided_by: 2 %}{% assign size = "md" %}{% endif %}
-  {% render "tiles", has_data: has_data, tiles: tiles, max: 8, cols: cols, size: size %}
+  {% if has_data and n <= 5 %}
+  {% if n > 4 %}{% assign portrait = "portrait:grid--cols-3" %}{% assign row_h = "h--40 portrait:h--80" %}{% else %}{% assign portrait = "portrait:grid--cols-4" %}{% assign row_h = "h--40" %}{% endif %}
+  <div class="flex flex--col gap--medium w--full h--full">
+    <div class="{{ row_h }} w--full">{% render "tiles", has_data: has_data, tiles: tiles, max: 5, cols: n, size: "badge", portrait: portrait %}</div>
+    <div class="grow w--full">{% render "hero", tile: tiles.first %}</div>
+  </div>
+  {% else %}
+  {% assign cols = n | plus: 1 | divided_by: 2 | at_least: 1 %}
+  {% render "tiles", has_data: has_data, tiles: tiles, max: 8, cols: cols, size: "md" %}
+  {% endif %}
 </div>
 
 {% render "title_bar", date: date, updated: updated %}

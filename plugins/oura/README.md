@@ -1,6 +1,6 @@
 # Oura
 
-Oura Ring scores on TRMNL, drawn as rings rather than bare numbers, with a 7-day trend under each one. You pick which metrics to show; the default is Readiness, Sleep, Activity and Stress.
+Oura Ring scores on TRMNL, styled after the Oura app: thin score rings with an icon above the number, tracked uppercase status labels, and a featured card with your week on an arc and a serif headline. You pick which metrics to show; the default is Readiness, Sleep, Activity and Stress.
 
 ## What each tile shows
 
@@ -14,13 +14,15 @@ Oura Ring scores on TRMNL, drawn as rings rather than bare numbers, with a 7-day
 | SpO2 | arc filled to the average % | % | |
 | Resting HR, HRV, Cardio age, VO2 max, Temperature | outline ring | value and unit | |
 
-Below each ring, 7 bars show the last week, oldest first. The day in the ring is solid, the other days are outlined, and a flat tick means no data that day. Bars are scaled between the week's low and high, so they show direction rather than absolute level. The full-screen view with 4 or fewer tiles also shows how the day compares with the week's average (`+3 vs 7-day avg`).
+Each ring has the metric's icon above the value; an Optimal score shows a crown instead, as in the app. Below the ring come the label and the status in small capitals.
+
+Where there's room, 7 bars under each ring show the last week, oldest first. The day in the ring is solid, the other days are outlined, and a flat tick means no data that day. Bars are scaled between the week's low and high, so they show direction rather than absolute level.
 
 Sleep-based numbers (readiness, sleep, total sleep, resting HR, HRV) only exist after you open the Oura app and sync in the morning. Until then, a tile shows the latest earlier day and names it (`Good · Mon`). Resting HR and HRV come from the night's main sleep; naps are ignored.
 
 Layouts:
 
-- `full`: up to 4 tiles in one large row, or 5-8 in two rows.
+- `full`: with up to 5 metrics, a row of score rings over a featured card for the first metric, like the Oura app's Today tab: the last 7 days as dots on an arc (each dot lifted by that day's value, the day in the ring drawn bold), the metric's icon, a headline such as "Your readiness is good", and how the day compares with the week's average (`+3 vs 7-day avg`). In portrait, 5 rings take two rows. With 6-8 metrics, two rows of rings with bars.
 - `half_horizontal`: up to 5 in a row.
 - `half_vertical`: 2 columns. With 5-6 tiles, the status and bars are dropped to keep the rings readable.
 - `quadrant`: up to 4 small rings.
@@ -36,7 +38,7 @@ Oura API v2 collections the selected metrics need, last 7 days -> IDX_0.. -> src
 
 - **Polling:** [src/settings.yml](src/settings.yml) lists one URL per Oura collection (readiness, daily sleep, activity, stress, sleep periods, resilience, SpO2, cardiovascular age, VO2 max), each with `fields=` so the responses stay small. Liquid in `polling_url` keeps only the collections your selected metrics need, so the default four metrics make four requests, and a collection your account can't read only affects metrics that use it. The date window runs from 7 days ago to tomorrow (UTC), which covers your last 7 days in any timezone.
 - **Transform:** [src/transform.py](src/transform.py) picks the selected metrics, finds each metric's latest day up to your local today (TRMNL account timezone), and computes ring fill, labels and bar heights. A collection that failed (for example, a scope you didn't grant) just drops its tiles.
-- **Templates:** [src/shared.liquid](src/shared.liquid) draws the rings and bars as inline SVG in black only, so they stay sharp on 1-bit screens.
+- **Templates:** [src/shared.liquid](src/shared.liquid) draws the rings, icons, bars and week arc as inline SVG in black only, so they stay sharp on 1-bit screens. Headlines use [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) from Google Fonts, a condensed serif close to Oura's; if it can't load, the screen falls back to the device's serif. That and the tracked uppercase labels are the plugin's only custom CSS, since the framework has no classes for them.
 
 ## Setup
 
@@ -87,4 +89,5 @@ To add a metric: add its option to `metrics` in `src/settings.yml`, add it to `C
 
 The version appears at the end of **About This Plugin** (`author_bio` in [src/settings.yml](src/settings.yml)). Bump it there and add a line here with each release.
 
+- **1.1.0** (2026-09-29): styled after the Oura app. Thin score rings with metric icons (a crown for Optimal), tracked uppercase status labels, an ŌURA title, and on full screen (up to 5 metrics) a featured card for the first metric with the week on an arc and a serif headline.
 - **1.0.0** (2026-09-29): first release. Readiness, Sleep, Activity and Stress by default, plus Resilience, Total sleep, Steps, Resting HR, HRV, SpO2, Cardio age, VO2 max and Temperature. Ring gauges with 7-day trend bars in all four layouts.

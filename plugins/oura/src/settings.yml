@@ -35,7 +35,7 @@ custom_fields:
 - keyname: author_bio
   name: About This Plugin
   field_type: author_bio
-  description: Your Oura Ring scores as rings, with a 7-day trend under each one. Pick which metrics to show below; the default is Readiness, Sleep, Activity and Stress.<br/><br/>Needs your own Oura API application for OAuth. See the <a href="https://github.com/adamconde/trmnl-plugins/blob/main/plugins/oura/README.md" class="underline" target="_blank">setup instructions</a>.<br/><br/>Version 1.0.0
+  description: Your Oura Ring scores as rings, with a 7-day trend under each one. Pick which metrics to show below; the default is Readiness, Sleep, Activity and Stress.<br/><br/>Needs your own Oura API application for OAuth. See the <a href="https://github.com/adamconde/trmnl-plugins/blob/main/plugins/oura/README.md" class="underline" target="_blank">setup instructions</a>.<br/><br/>Version 1.1.0
   learn_more_url: https://github.com/adamconde/trmnl-plugins/blob/main/plugins/oura/README.md
   category: personal,life
 - keyname: metrics

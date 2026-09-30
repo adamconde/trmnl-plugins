@@ -1,24 +1,58 @@
 {% comment %}
+  Oura's type: tracked uppercase kickers ("GOOD") and a condensed serif for headlines.
+  The framework has no class for either, so this is the plugin's only custom CSS.
+{% endcomment %}
+{% template styles %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=block">
+<style>
+  .oura-kicker { text-transform: uppercase; letter-spacing: 0.14em; }
+  .oura-serif { font-family: "Instrument Serif", serif; line-height: 1; }
+</style>
+{% endtemplate %}
+
+{% comment %} Line icons in a 24-unit box, like the ones above Oura's scores. A crown marks an optimal score, as in the app. {% endcomment %}
+{% template icon %}
+<svg x="{{ x }}" y="{{ y }}" width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  {% case name %}
+  {% when "crown" %}<path d="M4 18 3 8l5 4 4-7 4 7 5-4-1 10Z" fill="black"/>
+  {% when "readiness" %}<path d="M12 21v-8M12 13c-4 0-7-2.5-7-7 4 0 7 2.5 7 7ZM12 11c0-4 2.5-7 7-7 0 4.5-3 7-7 7Z"/>
+  {% when "sleep", "total_sleep" %}<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 7 7 0 0 0 20 14.5Z"/>
+  {% when "activity" %}<path d="M12 22c-4 0-7-3-7-7 0-4 3-6 4-10 2 2 3 4 3 6 1-1 2-2 2-4 2 2 5 5 5 8 0 4-3 7-7 7Z"/>
+  {% when "steps" %}<path d="M8 13c-2 0-3-2-3-5s1-5 3-5 3 2 3 5-1 5-3 5ZM6 16h4M16 21c-2 0-3-2-3-5s1-5 3-5 3 2 3 5-1 5-3 5Z"/>
+  {% when "stress" %}<path d="M2 12c2.2-4.5 4.4-4.5 6.6 0s4.4 4.5 6.6 0 4.4-4.5 6.6 0"/>
+  {% when "resilience" %}<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6Z"/>
+  {% when "resting_hr" %}<path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2"/>
+  {% when "hrv" %}<path d="M2 12h4l2-6 4 12 3-9 2 3h5"/>
+  {% when "spo2" %}<path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11Z"/>
+  {% when "cardio_age" %}<path d="M12 20s-8-4.5-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.5 12 20 12 20Z"/>
+  {% when "vo2_max" %}<path d="M3 9h11a3 3 0 1 0-3-3M3 15h15a3 3 0 1 1-3 3M3 12h8"/>
+  {% when "temperature" %}<path d="M10 13.5V5a2 2 0 0 1 4 0v8.5a4 4 0 1 1-4 0Z"/>
+  {% endcase %}
+</svg>
+{% endtemplate %}
+
+{% comment %}
   Ring gauge in a 100x100 box. Circles use pathLength 100, so dash lengths are percentages.
-  arc: thin track plus a thick arc for pct. segments: thick when filled, thin otherwise. plain: thin outline.
+  arc: hairline track plus a progress arc for pct. segments: bold when filled, hairline otherwise. plain: hairline outline.
 {% endcomment %}
 {% template ring %}
+{% if tile.status == "Optimal" %}{% assign icon = "crown" %}{% else %}{% assign icon = tile.key %}{% endif %}
 <svg viewBox="0 0 100 100" class="absolute inset--0 w--full h--full">
   {% case tile.ring %}
   {% when "segments" %}
   {% for seg in tile.segments %}
-  <circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="{% if seg.filled %}8{% else %}1.5{% endif %}" pathLength="100" stroke-dasharray="{{ seg.length }} 100" stroke-dashoffset="{{ seg.offset }}" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="black" stroke-width="{% if seg.filled %}5{% else %}1.5{% endif %}" pathLength="100" stroke-dasharray="{{ seg.length }} 100" stroke-dashoffset="{{ seg.offset }}" transform="rotate(-90 50 50)"/>
   {% endfor %}
   {% when "arc" %}
-  <circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="1.5"/>
-  {% if tile.pct > 0 %}<circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="8" pathLength="100" stroke-dasharray="{{ tile.pct }} 100" stroke-linecap="{% if tile.pct < 100 %}round{% else %}butt{% endif %}" transform="rotate(-90 50 50)"/>{% endif %}
+  <circle cx="50" cy="50" r="46" fill="none" stroke="black" stroke-width="1.5"/>
+  {% if tile.pct > 0 %}<circle cx="50" cy="50" r="46" fill="none" stroke="black" stroke-width="5" pathLength="100" stroke-dasharray="{{ tile.pct }} 100" stroke-linecap="{% if tile.pct < 100 %}round{% else %}butt{% endif %}" transform="rotate(-90 50 50)"/>{% endif %}
   {% else %}
-  <circle cx="50" cy="50" r="44" fill="none" stroke="black" stroke-width="1.5"/>
-  <circle cx="50" cy="50" r="39" fill="none" stroke="black" stroke-width="1.5" stroke-dasharray="1.5 4"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="black" stroke-width="1.5"/>
   {% endcase %}
+  {% render "icon", name: icon, x: 41, y: 16, size: 18 %}
   {% comment %} Value (and unit) in ring units, so they scale with the ring; the transform sizes the value to fit. {% endcomment %}
-  <text x="50" y="{% if show_unit %}46{% else %}50{% endif %}" text-anchor="middle" dominant-baseline="central" font-family="Inter Variable, Inter, sans-serif" font-size="{{ tile.size }}" fill="black">{{ tile.value }}</text>
-  {% if show_unit %}<text x="50" y="69" text-anchor="middle" dominant-baseline="central" font-family="Inter Variable, Inter, sans-serif" font-size="10" fill="black">{{ tile.unit }}</text>{% endif %}
+  <text x="50" y="{% if show_unit %}55{% else %}58{% endif %}" text-anchor="middle" dominant-baseline="central" font-family="Inter Variable, Inter, sans-serif" font-size="{{ tile.size }}" fill="black">{{ tile.value }}</text>
+  {% if show_unit %}<text x="50" y="75" text-anchor="middle" dominant-baseline="central" font-family="Inter Variable, Inter, sans-serif" font-size="9" letter-spacing="0.5" fill="black">{{ tile.unit }}</text>{% endif %}
 </svg>
 {% endtemplate %}
 
@@ -37,40 +71,75 @@
 </svg>
 {% endtemplate %}
 
-{% comment %} One metric: label, ring with the value inside, status, then (lg/md) 7-day bars and (lg) the weekly comparison. {% endcomment %}
+{% comment %} One metric, like the score circles atop the Oura app: ring (icon and value inside), label, status kicker, then (md) 7-day bars. {% endcomment %}
 {% template tile %}
 {% case size %}
-  {% when "lg" %}{% assign label_class = "title" %}{% assign status_class = "label" %}{% assign bars_h = "h--16 lg:h--32" %}
   {% when "sm" %}{% assign label_class = "label label--small" %}
-  {% else %}{% assign label_class = "label" %}{% assign status_class = "label label--small" %}{% assign bars_h = "h--6 lg:h--12" %}
+  {% else %}{% assign label_class = "label" %}
 {% endcase %}
 <div class="flex flex--col flex--center-x gap--xsmall w--full h--full">
-  <span class="{{ label_class }}">{{ tile.label }}</span>
   {% comment %} The ring is laid over the space it grows into, so it never pushes the tile taller. {% endcomment %}
   <div class="relative grow w--full">
     {% if tile.unit and size != "sm" %}{% assign show_unit = true %}{% else %}{% assign show_unit = false %}{% endif %}
     {% render "ring", tile: tile, show_unit: show_unit %}
   </div>
+  <span class="{{ label_class }}">{{ tile.label }}</span>
+  {% comment %} Always a status line (blank when there is none), so labels line up across the row. {% endcomment %}
   {% if size != "sm" %}
-  {% if tile.status or tile.stale %}
-  <span class="{{ status_class }}{% if tile.status == 'Pay attention' %} label--inverted{% endif %}">{{ tile.status }}{% if tile.status and tile.stale %} · {% endif %}{% if tile.stale %}{{ tile.stale }}{% endif %}</span>
+  <span class="label label--small oura-kicker{% if tile.status == 'Pay attention' %} label--inverted{% endif %}">{{ tile.status }}{% if tile.status and tile.stale %} · {% endif %}{% if tile.stale %}{{ tile.stale }}{% endif %}{% unless tile.status or tile.stale %}&nbsp;{% endunless %}</span>
   {% endif %}
-  {% render "bars", tile: tile, height: bars_h %}
-  {% endif %}
-  {% if size == "lg" and tile.note %}<span class="description w--full text--center" data-clamp="1">{{ tile.note }}</span>{% endif %}
+  {% if size == "md" %}{% render "bars", tile: tile, height: "h--6 lg:h--12" %}{% endif %}
+</div>
+{% endtemplate %}
+
+{% comment %}
+  Featured metric, like the cards on Oura's Today tab: the week as dots on an arc (oldest at the left,
+  each dot lifted by that day's value, the day shown in the rings bold), the metric's icon, a kicker,
+  a serif headline and the comparison with the week.
+  The arc is part of a circle centred at (200, 224) with radius 190, spanning -55 to 55 degrees; each
+  day is drawn at the top and rotated into place.
+{% endcomment %}
+{% template hero %}
+<div class="flex flex--col flex--center-x gap--xsmall w--full h--full">
+  <div class="relative grow w--full">
+    <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax meet" class="absolute inset--0 w--full h--full">
+      <circle cx="200" cy="224" r="190" fill="none" stroke="black" stroke-width="1.5" pathLength="360" stroke-dasharray="110 250" transform="rotate(-145 200 224)"/>
+      {% for bar in tile.bars %}
+      {% assign angle = forloop.index0 | times: 18.3333 | minus: 55 %}
+      <g transform="rotate({{ angle }} 200 224)">
+        {% if bar.empty %}
+        <circle cx="200" cy="34" r="3" fill="white" stroke="black" stroke-width="1.5"/>
+        {% else %}
+        {% assign top = bar.height | times: 0.24 | minus: 34 | times: -1 %}
+        <line x1="200" y1="34" x2="200" y2="{{ top }}" stroke="black" stroke-width="{% if bar.current %}3{% else %}1.5{% endif %}"/>
+        <circle cx="200" cy="{{ top }}" r="{% if bar.current %}6{% else %}3.5{% endif %}" fill="black"/>
+        {% endif %}
+      </g>
+      {% endfor %}
+      <text x="44" y="138" text-anchor="middle" font-family="Inter Variable, Inter, sans-serif" font-size="13" letter-spacing="1.5" fill="black">{{ tile.bars.first.day | upcase }}</text>
+      <text x="356" y="138" text-anchor="middle" font-family="Inter Variable, Inter, sans-serif" font-size="13" letter-spacing="1.5" fill="black">{{ tile.bars.last.day | upcase }}</text>
+      <circle cx="200" cy="112" r="17" fill="none" stroke="black" stroke-width="1.5"/>
+      {% if tile.status == "Optimal" %}{% assign icon = "crown" %}{% else %}{% assign icon = tile.key %}{% endif %}
+      {% render "icon", name: icon, x: 190, y: 102, size: 20 %}
+    </svg>
+  </div>
+  <span class="label label--small oura-kicker">{{ tile.label }}{% if tile.stale %} · {{ tile.stale }}{% endif %}</span>
+  <span class="font--xxlarge oura-serif text--center">{{ tile.headline }}</span>
+  {% if tile.note %}<span class="description text--center">{{ tile.note }}</span>{% endif %}
 </div>
 {% endtemplate %}
 
 {% comment %} `tiles` holds the metrics picked in the `metrics` field, filtered and ordered by src/transform.py. {% endcomment %}
-{% comment %} Up to `max` tiles in a grid of `cols` columns (2 in portrait when wider), or the empty state. {% endcomment %}
+{% comment %} Up to `max` tiles in a grid of `cols` columns (in portrait, the `portrait` grid class, else 2 when wider), or the empty state. {% endcomment %}
 {% template tiles %}
 {% if has_data %}
-<div class="grid grid--cols-{{ cols }}{% if cols > 2 %} portrait:grid--cols-2{% endif %} gap--medium w--full h--full">
+{% if portrait %}{% assign portrait_class = portrait %}{% elsif cols > 2 %}{% assign portrait_class = "portrait:grid--cols-2" %}{% endif %}
+<div class="grid grid--cols-{{ cols }} {{ portrait_class }} gap--medium w--full h--full">
   {% for tile in tiles limit: max %}{% render "tile", tile: tile, size: size %}{% endfor %}
 </div>
 {% else %}
 <div class="flex flex--col flex--center gap--small w--full h--full">
-  <span class="title">No Oura data yet</span>
+  <span class="font--xxlarge oura-serif">No Oura data yet</span>
   <span class="description text--center">Connect your Oura account in the plugin settings, then sync your ring in the Oura app.</span>
 </div>
 {% endif %}
@@ -78,7 +147,7 @@
 
 {% template title_bar %}
 <div class="title_bar">
-  <span class="title">Oura</span>
+  <span class="title oura-kicker">Ōura</span>
   <span class="instance">{{ date }} · Updated {{ updated }}</span>
 </div>
 {% endtemplate %}

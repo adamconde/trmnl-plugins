@@ -14,15 +14,16 @@ Returned merge variables:
     date      viewer's today, e.g. "Tue, Sep 29"
     updated   local time of this refresh, e.g. "7:15 AM"
 
-Each tile: {key, label, value, size, unit, status, note, stale, ring, pct, segments, bars}
+Each tile: {key, label, value, size, unit, status, note, headline, stale, ring, pct, segments, bars}
     value     center text ("84", "7h 32m", "Normal")
     size      font size for ``value`` in the ring's 100-unit SVG box, small enough to fit inside it
     ring      "arc" (``pct`` 0-100 filled), "segments" (``segments`` [{offset, length, filled}]
               in pathLength-100 units), or "plain" (outline only)
     status    word under the ring ("Optimal", "62% of goal"), may be absent
     note      comparison with the rest of the week ("+4 vs 7-day avg"), may be absent
+    headline  sentence for the featured metric, in Oura's voice ("Your sleep is good")
     stale     weekday of the data when it isn't today's ("Mon"), may be absent
-    bars      7 days ending today, oldest first: {height 0-100, current, empty}
+    bars      7 days ending today, oldest first: {day, height 0-100, current, empty}
 """
 
 import math
@@ -64,9 +65,9 @@ RESILIENCE_LEVELS = ("limited", "adequate", "solid", "strong", "exceptional")
 SLEEP_TARGET_SECONDS = 8 * 3600
 DAYS = 7
 SEGMENT_GAP = 4  # gap between ring segments, in pathLength-100 units
-# Ring center text, in the ring's 100-unit SVG box: at most this big, and no wider than
-# TEXT_WIDTH (inside the ring's inner edge at radius 40).
-TEXT_MAX_SIZE = 44
+# Ring center text, in the ring's 100-unit SVG box: at most this big (the metric's icon sits
+# above it), and no wider than TEXT_WIDTH (inside the ring's inner edge at radius 40).
+TEXT_MAX_SIZE = 34
 TEXT_WIDTH = 62
 # Advance widths (em) of Inter at weight 400, the framework's value font, measured in Chrome.
 # Characters not listed count as 0.65em, about the widest common glyph.
@@ -192,6 +193,7 @@ def _tile(key, values, today):
     }
     tile.update(_FORMAT[key](current, [number(v) for v in others]))
     tile["size"] = _text_size(tile["value"])
+    tile["headline"] = _headline(key, tile)
     return tile
 
 
@@ -268,6 +270,22 @@ _NUMBER = {
 }
 
 
+def _headline(key, tile):
+    """Sentence for the featured metric, in the style of Oura's cards ("Your readiness is good")."""
+    value, status, unit = tile["value"], tile.get("status"), tile.get("unit")
+    if key in SCORES:
+        return f"Your {key} needs attention" if status == "Pay attention" else f"Your {key} is {status.lower()}"
+    if key == "resilience":
+        return f"Your resilience is {value.lower()}"
+    if key == "stress":
+        return f"{value} of stress so far" if status else f"Your day was {value.lower()}"
+    if key == "total_sleep":
+        return f"You slept {value}"
+    if key == "steps":
+        return f"{value} steps"
+    return f"{value}{'' if unit in ('%', '°C') else ' '}{unit}"
+
+
 def _band(score):
     """Oura's contributor bands for a 0-100 score."""
     if score >= 85:
@@ -297,10 +315,10 @@ def _bars(days, numbers, shown):
     bars = []
     for d in days:
         if d not in numbers:
-            bars.append({"height": 0, "empty": True})
+            bars.append({"day": f"{d:%a}", "height": 0, "empty": True})
             continue
         height = 65 if high == low else 30 + 70 * (numbers[d] - low) / (high - low)
-        bars.append({"height": round(height), "current": d == shown})
+        bars.append({"day": f"{d:%a}", "height": round(height), "current": d == shown})
     return bars
 
 

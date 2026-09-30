@@ -128,6 +128,32 @@ class OtherMetrics(unittest.TestCase):
         self.assertEqual(sum(1 for b in c["bars"] if b.get("empty")), 5)
 
 
+class Headline(unittest.TestCase):
+    def test_headlines_read_like_oura(self):
+        t = tiles(run(metrics=list(transform.CATALOG)))
+        self.assertEqual(t["readiness"]["headline"], "Your readiness is good")
+        self.assertEqual(t["activity"]["headline"], "Your activity is fair")
+        self.assertEqual(t["stress"]["headline"], "45m of stress so far")
+        self.assertEqual(t["resilience"]["headline"], "Your resilience is solid")
+        self.assertEqual(t["total_sleep"]["headline"], "You slept 7h 32m")
+        self.assertEqual(t["steps"]["headline"], "4,210 steps")
+        self.assertEqual(t["resting_hr"]["headline"], "51 bpm")
+        self.assertEqual(t["spo2"]["headline"], "97%")
+        self.assertEqual(t["temperature"]["headline"], "+0.1°C")
+
+    def test_low_score_and_finished_stress_day(self):
+        data = sample(today())
+        data["daily_readiness"]["data"][-1]["score"] = 55
+        data["daily_stress"]["data"][-1]["day_summary"] = "restored"
+        t = tiles(run(metrics=["readiness", "stress"], data=data))
+        self.assertEqual(t["readiness"]["headline"], "Your readiness needs attention")
+        self.assertEqual(t["stress"]["headline"], "Your day was restored")
+
+    def test_bars_name_their_weekday(self):
+        bars = tiles(run())["readiness"]["bars"]
+        self.assertEqual([b["day"] for b in bars], [f"{today() - timedelta(days=i):%a}" for i in range(6, -1, -1)])
+
+
 class TextSize(unittest.TestCase):
     def test_short_numbers_use_the_largest_size(self):
         self.assertEqual(transform._text_size("84"), transform.TEXT_MAX_SIZE)

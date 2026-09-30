@@ -1,3 +1,4 @@
+{% render "styles" %}
 <div class="layout">
   {% assign cols = tiles.size | at_most: 4 | at_least: 1 %}
   {% render "tiles", has_data: has_data, tiles: tiles, max: 4, cols: cols, size: "sm" %}

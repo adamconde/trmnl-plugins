@@ -1,3 +1,4 @@
+{% render "styles" %}
 <div class="layout">
   {% comment %} Two columns; five or six tiles (three rows) drop the status and bars to keep the rings readable. {% endcomment %}
   {% assign cols = tiles.size | at_most: 2 | at_least: 1 %}
