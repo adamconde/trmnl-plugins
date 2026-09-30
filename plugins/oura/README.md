@@ -31,10 +31,10 @@ Metrics beyond a layout's limit are left off, in the order listed in the Metrics
 
 ```text
 TRMNL (every 60 min, OAuth bearer token)                     TRMNL Serverless
-9 Oura API v2 collections, last 7 days -> IDX_0..IDX_8 -> src/transform.py -> tiles -> templates
+Oura API v2 collections the selected metrics need, last 7 days -> IDX_0.. -> src/transform.py -> tiles -> templates
 ```
 
-- **Polling:** [src/settings.yml](src/settings.yml) lists one URL per Oura collection (readiness, daily sleep, activity, stress, sleep periods, resilience, SpO2, cardiovascular age, VO2 max), each with `fields=` so the responses stay small. They're always polled, whatever you select. The date window runs from 7 days ago to tomorrow (UTC), which covers your last 7 days in any timezone.
+- **Polling:** [src/settings.yml](src/settings.yml) lists one URL per Oura collection (readiness, daily sleep, activity, stress, sleep periods, resilience, SpO2, cardiovascular age, VO2 max), each with `fields=` so the responses stay small. Liquid in `polling_url` keeps only the collections your selected metrics need, so the default four metrics make four requests, and a collection your account can't read only affects metrics that use it. The date window runs from 7 days ago to tomorrow (UTC), which covers your last 7 days in any timezone.
 - **Transform:** [src/transform.py](src/transform.py) picks the selected metrics, finds each metric's latest day up to your local today (TRMNL account timezone), and computes ring fill, labels and bar heights. A collection that failed (for example, a scope you didn't grant) just drops its tiles.
 - **Templates:** [src/shared.liquid](src/shared.liquid) draws the rings and bars as inline SVG in black only, so they stay sharp on 1-bit screens.
 
@@ -54,6 +54,8 @@ If you leave a scope unchecked on Oura's consent screen, the metrics that need i
 
 A 403 from Oura usually means the Oura membership has lapsed; the plugin then shows "No Oura data yet".
 
+Some accounts get a 401 from the resilience collection while every other collection works. If that happens, remove Resilience from Metrics; nothing else is affected.
+
 ## Development
 
 ```bash
@@ -65,10 +67,10 @@ python3 -m unittest discover tests   # transform tests
 **Preview with sample data** (no Oura account needed). Post a synthetic week to the local server:
 
 ```bash
-python3 tests/sample.py | curl -X POST -H "Content-Type: application/json" --data-binary @- localhost:4567/webhook
+python3 tests/sample.py readiness sleep activity stress | curl -X POST -H "Content-Type: application/json" --data-binary @- localhost:4567/webhook
 ```
 
-The next poll replaces it. Change `custom_fields.metrics` in [.trmnlp.yml](.trmnlp.yml) to preview other selections.
+List the same metrics as `custom_fields.metrics` in [.trmnlp.yml](.trmnlp.yml), since responses are matched to metrics by position. The next poll replaces the sample data.
 
 **Preview with your own data:** export your app's credentials before `bin/trmnlp serve`, then click **Connect account** in the preview:
 
@@ -79,7 +81,7 @@ read -rs TRMNL_OAUTH_CLIENT_SECRET && export TRMNL_OAUTH_CLIENT_SECRET
 
 The Docker wrapper doesn't pass environment variables into the container, so this needs the `trmnl_preview` gem (or add `--env TRMNL_OAUTH_CLIENT_ID --env TRMNL_OAUTH_CLIENT_SECRET` to the `docker run` in [bin/trmnlp](bin/trmnlp)). trmnlp keeps the tokens in its cache directory, never in this repo.
 
-To add a metric: add its option to `metrics` in `src/settings.yml`, add it to `CATALOG`, `LABELS` and `_FORMAT` in `src/transform.py` (plus a polling URL and `SOURCES` entry if it needs a new collection; keep both in the same order), and add a test.
+To add a metric: add its option to `metrics` in `src/settings.yml`, add it to `CATALOG`, `LABELS` and `_FORMAT` in `src/transform.py` (plus a `SOURCE_METRICS` entry, or a new collection there and a matching conditional URL in `polling_url`, in the same order), and add a test.
 
 ## Version history
 

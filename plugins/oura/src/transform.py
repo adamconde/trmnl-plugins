@@ -1,9 +1,11 @@
 """Serverless transform: Oura API v2 daily collections -> dashboard tiles.
 
-TRMNL polls the URLs in settings.yml (in that order) with the user's OAuth token
-and passes the responses as ``IDX_0`` .. ``IDX_8``, plus the ``trmnl`` namespace,
-to ``run``. A URL that failed (missing scope, expired subscription) arrives as an
-empty or error object and its metrics are skipped.
+TRMNL polls the URLs in settings.yml with the user's OAuth token. Only the
+collections the selected metrics need are polled (SOURCE_METRICS; the Liquid in
+polling_url makes the same choice), in SOURCES order, and the responses arrive as
+``IDX_0``, ``IDX_1``, ... (or unwrapped when only one URL is polled), plus the
+``trmnl`` namespace. A URL that failed (missing scope, expired subscription)
+arrives as an empty or error object and its metrics are skipped.
 
 Returned merge variables:
 
@@ -31,11 +33,20 @@ try:
 except ImportError:  # runtime without tzdata; fall back to the fixed UTC offset
     ZoneInfo = None
 
-# Order of the polling_url lines in settings.yml.
-SOURCES = (
-    "daily_readiness", "daily_sleep", "daily_activity", "daily_stress", "sleep",
-    "daily_resilience", "daily_spo2", "daily_cardiovascular_age", "vo2_max",
-)
+# Oura collections in the order of the polling_url lines in settings.yml, with the
+# metrics that need each one (keep the conditions in polling_url in sync).
+SOURCE_METRICS = {
+    "daily_readiness": ("readiness", "temperature"),
+    "daily_sleep": ("sleep",),
+    "daily_activity": ("activity", "steps"),
+    "daily_stress": ("stress",),
+    "sleep": ("total_sleep", "resting_hr", "hrv"),
+    "daily_resilience": ("resilience",),
+    "daily_spo2": ("spo2",),
+    "daily_cardiovascular_age": ("cardio_age",),
+    "vo2_max": ("vo2_max",),
+}
+SOURCES = tuple(SOURCE_METRICS)
 CATALOG = (
     "readiness", "sleep", "activity", "stress", "resilience", "total_sleep", "steps",
     "resting_hr", "hrv", "spo2", "cardio_age", "vo2_max", "temperature",
@@ -78,10 +89,10 @@ def run(input):
     """
     trmnl = input.get("trmnl") or {}
     now = datetime.now(timezone.utc).astimezone(_user_tz(trmnl))
-    docs = {name: _documents(input.get(f"IDX_{i}")) for i, name in enumerate(SOURCES)}
-    series = _series(docs)
+    selected = _selected(trmnl)
+    series = _series(_polled_documents(input, selected))
 
-    tiles = [t for t in (_tile(key, series.get(key) or {}, now.date()) for key in _selected(trmnl)) if t]
+    tiles = [t for t in (_tile(key, series.get(key) or {}, now.date()) for key in selected) if t]
     return _compact({
         "has_data": bool(tiles),
         "tiles": tiles,
@@ -100,6 +111,20 @@ def _selected(trmnl):
         values = values.split(",")
     chosen = {str(v).strip() for v in values or ()}
     return [key for key in CATALOG if key in chosen] or list(DEFAULT_METRICS)
+
+
+def _polled_documents(input, selected):
+    """Map every source to its documents, matching responses to the sources polled for ``selected``.
+
+    TRMNL numbers the responses IDX_0, IDX_1, ... in polling order, but passes a single
+    response as-is, without the IDX_0 wrapper.
+    """
+    polled = [s for s in SOURCES if set(SOURCE_METRICS[s]) & set(selected)]
+    if len(polled) == 1:
+        responses = {polled[0]: input}
+    else:
+        responses = {name: input.get(f"IDX_{i}") for i, name in enumerate(polled)}
+    return {name: _documents(responses.get(name)) for name in SOURCES}
 
 
 def _documents(response):
