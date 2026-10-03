@@ -22,15 +22,16 @@ import sys
 import urllib.error
 import urllib.request
 
-# `fields` trims the response to what the transform reads (~22 KB instead of ~170 KB).
+# `fields` trims the response to what the transform reads (~30 KB instead of ~190 KB).
 # The postseason always falls within one calendar year, so `season` is the current
 # year; off-season, MLB returns an empty `series` list until the bracket is set.
 MLB_URL = (
     "https://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season={season}"
-    "&hydrate=team,linescore,seriesStatus"
+    "&hydrate=team,linescore,seriesStatus,probablePitcher"
     "&fields=series,series,id,games,gameDate,officialDate,seriesGameNumber,gamesInSeries,status,"
     "abstractGameState,detailedState,startTimeTBD,teams,away,home,team,id,abbreviation,placeholder,"
-    "score,isWinner,linescore,currentInning,currentInningOrdinal,inningState,seriesStatus,abbreviation"
+    "score,isWinner,linescore,currentInning,currentInningOrdinal,inningState,seriesStatus,abbreviation,"
+    "probablePitcher,fullName,venue,name"
 )
 LOCAL_WEBHOOK = "http://localhost:4567/webhook"
 TIMEOUT = 20  # seconds

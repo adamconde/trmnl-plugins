@@ -1,0 +1,2702 @@
+{
+ "series": [
+  {
+   "series": {
+    "id": "D_1"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-03T22:30:00Z",
+     "officialDate": "2026-10-03",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 147,
+        "name": "New York Yankees",
+        "venue": {
+         "id": 3313,
+         "name": "Yankee Stadium"
+        },
+        "abbreviation": "NYY"
+       },
+       "probablePitcher": {
+        "id": 543037,
+        "fullName": "Gerrit Cole"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 139,
+        "name": "Tampa Bay Rays",
+        "venue": {
+         "id": 12,
+         "name": "Tropicana Field"
+        },
+        "abbreviation": "TB"
+       },
+       "probablePitcher": {
+        "id": 656876,
+        "fullName": "Drew Rasmussen"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 12,
+      "name": "Tropicana Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-06T00:00:00Z",
+     "officialDate": "2026-10-05",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 147,
+        "name": "New York Yankees",
+        "venue": {
+         "id": 3313,
+         "name": "Yankee Stadium"
+        },
+        "abbreviation": "NYY"
+       },
+       "probablePitcher": {
+        "id": 693645,
+        "fullName": "Cam Schlittler"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 139,
+        "name": "Tampa Bay Rays",
+        "venue": {
+         "id": 12,
+         "name": "Tropicana Field"
+        },
+        "abbreviation": "TB"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 12,
+      "name": "Tropicana Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-08T00:00:00Z",
+     "officialDate": "2026-10-07",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 139,
+        "name": "Tampa Bay Rays",
+        "venue": {
+         "id": 12,
+         "name": "Tropicana Field"
+        },
+        "abbreviation": "TB"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "name": "New York Yankees",
+        "venue": {
+         "id": 3313,
+         "name": "Yankee Stadium"
+        },
+        "abbreviation": "NYY"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3313,
+      "name": "Yankee Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-09T00:00:00Z",
+     "officialDate": "2026-10-08",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 139,
+        "name": "Tampa Bay Rays",
+        "venue": {
+         "id": 12,
+         "name": "Tropicana Field"
+        },
+        "abbreviation": "TB"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "name": "New York Yankees",
+        "venue": {
+         "id": 3313,
+         "name": "Yankee Stadium"
+        },
+        "abbreviation": "NYY"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3313,
+      "name": "Yankee Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-11T00:00:00Z",
+     "officialDate": "2026-10-10",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 147,
+        "name": "New York Yankees",
+        "venue": {
+         "id": 3313,
+         "name": "Yankee Stadium"
+        },
+        "abbreviation": "NYY"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 139,
+        "name": "Tampa Bay Rays",
+        "venue": {
+         "id": 12,
+         "name": "Tropicana Field"
+        },
+        "abbreviation": "TB"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 12,
+      "name": "Tropicana Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_2"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-03T17:00:00Z",
+     "officialDate": "2026-10-03",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 145,
+        "name": "Chicago White Sox",
+        "venue": {
+         "id": 4,
+         "name": "Rate Field"
+        },
+        "abbreviation": "CWS"
+       },
+       "probablePitcher": {
+        "id": 696146,
+        "fullName": "Hagen Smith"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "name": "Cleveland Guardians",
+        "venue": {
+         "id": 5,
+         "name": "Progressive Field"
+        },
+        "abbreviation": "CLE"
+       },
+       "probablePitcher": {
+        "id": 800048,
+        "fullName": "Parker Messick"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 5,
+      "name": "Progressive Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-05T21:00:00Z",
+     "officialDate": "2026-10-05",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 145,
+        "name": "Chicago White Sox",
+        "venue": {
+         "id": 4,
+         "name": "Rate Field"
+        },
+        "abbreviation": "CWS"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "name": "Cleveland Guardians",
+        "venue": {
+         "id": 5,
+         "name": "Progressive Field"
+        },
+        "abbreviation": "CLE"
+       },
+       "probablePitcher": {
+        "id": 668909,
+        "fullName": "Gavin Williams"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 5,
+      "name": "Progressive Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-07T20:00:00Z",
+     "officialDate": "2026-10-07",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 114,
+        "name": "Cleveland Guardians",
+        "venue": {
+         "id": 5,
+         "name": "Progressive Field"
+        },
+        "abbreviation": "CLE"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 145,
+        "name": "Chicago White Sox",
+        "venue": {
+         "id": 4,
+         "name": "Rate Field"
+        },
+        "abbreviation": "CWS"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 4,
+      "name": "Rate Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-08T21:00:00Z",
+     "officialDate": "2026-10-08",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 114,
+        "name": "Cleveland Guardians",
+        "venue": {
+         "id": 5,
+         "name": "Progressive Field"
+        },
+        "abbreviation": "CLE"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 145,
+        "name": "Chicago White Sox",
+        "venue": {
+         "id": 4,
+         "name": "Rate Field"
+        },
+        "abbreviation": "CWS"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 4,
+      "name": "Rate Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-10T21:00:00Z",
+     "officialDate": "2026-10-10",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 145,
+        "name": "Chicago White Sox",
+        "venue": {
+         "id": 4,
+         "name": "Rate Field"
+        },
+        "abbreviation": "CWS"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 114,
+        "name": "Cleveland Guardians",
+        "venue": {
+         "id": 5,
+         "name": "Progressive Field"
+        },
+        "abbreviation": "CLE"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 5,
+      "name": "Progressive Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_3"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-04T00:30:00Z",
+     "officialDate": "2026-10-03",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 135,
+        "name": "San Diego Padres",
+        "venue": {
+         "id": 2680,
+         "name": "Petco Park"
+        },
+        "abbreviation": "SD"
+       },
+       "probablePitcher": {
+        "id": 592662,
+        "fullName": "Robbie Ray"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "name": "Milwaukee Brewers",
+        "venue": {
+         "id": 32,
+         "name": "American Family Field"
+        },
+        "abbreviation": "MIL"
+       },
+       "probablePitcher": {
+        "id": 694819,
+        "fullName": "Jacob Misiorowski"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 32,
+      "name": "American Family Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-04T20:00:00Z",
+     "officialDate": "2026-10-04",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 135,
+        "name": "San Diego Padres",
+        "venue": {
+         "id": 2680,
+         "name": "Petco Park"
+        },
+        "abbreviation": "SD"
+       },
+       "probablePitcher": {
+        "id": 650633,
+        "fullName": "Michael King"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "name": "Milwaukee Brewers",
+        "venue": {
+         "id": 32,
+         "name": "American Family Field"
+        },
+        "abbreviation": "MIL"
+       },
+       "probablePitcher": {
+        "id": 701656,
+        "fullName": "Logan Henderson"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 32,
+      "name": "American Family Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-07T01:30:00Z",
+     "officialDate": "2026-10-06",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 158,
+        "name": "Milwaukee Brewers",
+        "venue": {
+         "id": 32,
+         "name": "American Family Field"
+        },
+        "abbreviation": "MIL"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 135,
+        "name": "San Diego Padres",
+        "venue": {
+         "id": 2680,
+         "name": "Petco Park"
+        },
+        "abbreviation": "SD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 2680,
+      "name": "Petco Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-08T02:00:00Z",
+     "officialDate": "2026-10-07",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 158,
+        "name": "Milwaukee Brewers",
+        "venue": {
+         "id": 32,
+         "name": "American Family Field"
+        },
+        "abbreviation": "MIL"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 135,
+        "name": "San Diego Padres",
+        "venue": {
+         "id": 2680,
+         "name": "Petco Park"
+        },
+        "abbreviation": "SD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 2680,
+      "name": "Petco Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-09T20:30:00Z",
+     "officialDate": "2026-10-09",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 135,
+        "name": "San Diego Padres",
+        "venue": {
+         "id": 2680,
+         "name": "Petco Park"
+        },
+        "abbreviation": "SD"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 158,
+        "name": "Milwaukee Brewers",
+        "venue": {
+         "id": 32,
+         "name": "American Family Field"
+        },
+        "abbreviation": "MIL"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 32,
+      "name": "American Family Field"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "D_4"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-03T20:00:00Z",
+     "officialDate": "2026-10-03",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 144,
+        "name": "Atlanta Braves",
+        "venue": {
+         "id": 4705,
+         "name": "Truist Park"
+        },
+        "abbreviation": "ATL"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "name": "Los Angeles Dodgers",
+        "venue": {
+         "id": 22,
+         "name": "UNIQLO Field at Dodger Stadium"
+        },
+        "abbreviation": "LAD"
+       },
+       "probablePitcher": {
+        "id": 669373,
+        "fullName": "Tarik Skubal"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 22,
+      "name": "UNIQLO Field at Dodger Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-05T00:00:00Z",
+     "officialDate": "2026-10-04",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 144,
+        "name": "Atlanta Braves",
+        "venue": {
+         "id": 4705,
+         "name": "Truist Park"
+        },
+        "abbreviation": "ATL"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "name": "Los Angeles Dodgers",
+        "venue": {
+         "id": 22,
+         "name": "UNIQLO Field at Dodger Stadium"
+        },
+        "abbreviation": "LAD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 22,
+      "name": "UNIQLO Field at Dodger Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-06T22:00:00Z",
+     "officialDate": "2026-10-06",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "name": "Los Angeles Dodgers",
+        "venue": {
+         "id": 22,
+         "name": "UNIQLO Field at Dodger Stadium"
+        },
+        "abbreviation": "LAD"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 144,
+        "name": "Atlanta Braves",
+        "venue": {
+         "id": 4705,
+         "name": "Truist Park"
+        },
+        "abbreviation": "ATL"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 4705,
+      "name": "Truist Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-07T22:00:00Z",
+     "officialDate": "2026-10-07",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 119,
+        "name": "Los Angeles Dodgers",
+        "venue": {
+         "id": 22,
+         "name": "UNIQLO Field at Dodger Stadium"
+        },
+        "abbreviation": "LAD"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 144,
+        "name": "Atlanta Braves",
+        "venue": {
+         "id": 4705,
+         "name": "Truist Park"
+        },
+        "abbreviation": "ATL"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 4705,
+      "name": "Truist Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-10T00:00:00Z",
+     "officialDate": "2026-10-09",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 144,
+        "name": "Atlanta Braves",
+        "venue": {
+         "id": 4705,
+         "name": "Truist Park"
+        },
+        "abbreviation": "ATL"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 119,
+        "name": "Los Angeles Dodgers",
+        "venue": {
+         "id": 22,
+         "name": "UNIQLO Field at Dodger Stadium"
+        },
+        "abbreviation": "LAD"
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 22,
+      "name": "UNIQLO Field at Dodger Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLDS"
+     },
+     "gamesInSeries": 5,
+     "seriesGameNumber": 5
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "L_2"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-11T07:33:00Z",
+     "officialDate": "2026-10-11",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5525,
+        "name": "NL Lower Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5517,
+        "name": "NL Higher Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3833,
+      "name": "NL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-12T07:33:00Z",
+     "officialDate": "2026-10-12",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5525,
+        "name": "NL Lower Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5517,
+        "name": "NL Higher Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3833,
+      "name": "NL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-14T07:33:00Z",
+     "officialDate": "2026-10-14",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5517,
+        "name": "NL Higher Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5525,
+        "name": "NL Lower Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3833,
+      "name": "NL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-15T07:33:00Z",
+     "officialDate": "2026-10-15",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5517,
+        "name": "NL Higher Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5525,
+        "name": "NL Lower Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3833,
+      "name": "NL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-16T07:33:00Z",
+     "officialDate": "2026-10-16",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5517,
+        "name": "NL Higher Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5525,
+        "name": "NL Lower Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3833,
+      "name": "NL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 5
+    },
+    {
+     "gameDate": "2026-10-18T07:33:00Z",
+     "officialDate": "2026-10-18",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5525,
+        "name": "NL Lower Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5517,
+        "name": "NL Higher Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3833,
+      "name": "NL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 6
+    },
+    {
+     "gameDate": "2026-10-19T07:33:00Z",
+     "officialDate": "2026-10-19",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5525,
+        "name": "NL Lower Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5517,
+        "name": "NL Higher Seed",
+        "venue": {
+         "id": 3833,
+         "name": "NL Stadium"
+        },
+        "abbreviation": "NL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3833,
+      "name": "NL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 7
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "L_1"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-12T07:33:00Z",
+     "officialDate": "2026-10-12",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5521,
+        "name": "AL Lower Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5513,
+        "name": "AL Higher Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3832,
+      "name": "AL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-13T07:33:00Z",
+     "officialDate": "2026-10-13",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5521,
+        "name": "AL Lower Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5513,
+        "name": "AL Higher Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3832,
+      "name": "AL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-15T07:33:00Z",
+     "officialDate": "2026-10-15",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5513,
+        "name": "AL Higher Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5521,
+        "name": "AL Lower Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3832,
+      "name": "AL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-16T07:33:00Z",
+     "officialDate": "2026-10-16",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5513,
+        "name": "AL Higher Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5521,
+        "name": "AL Lower Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3832,
+      "name": "AL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-17T07:33:00Z",
+     "officialDate": "2026-10-17",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5513,
+        "name": "AL Higher Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5521,
+        "name": "AL Lower Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3832,
+      "name": "AL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 5
+    },
+    {
+     "gameDate": "2026-10-19T07:33:00Z",
+     "officialDate": "2026-10-19",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5521,
+        "name": "AL Lower Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5513,
+        "name": "AL Higher Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3832,
+      "name": "AL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 6
+    },
+    {
+     "gameDate": "2026-10-20T07:33:00Z",
+     "officialDate": "2026-10-20",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 5521,
+        "name": "AL Lower Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 5513,
+        "name": "AL Higher Seed",
+        "venue": {
+         "id": 3832,
+         "name": "AL Stadium"
+        },
+        "abbreviation": "AL High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3832,
+      "name": "AL Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALCS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 7
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "W_1"
+   },
+   "games": [
+    {
+     "gameDate": "2026-10-23T07:33:00Z",
+     "officialDate": "2026-10-23",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2711,
+        "name": "Lower Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2710,
+        "name": "Higher Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 401,
+      "name": "TBD"
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-24T07:33:00Z",
+     "officialDate": "2026-10-24",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2711,
+        "name": "Lower Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2710,
+        "name": "Higher Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 401,
+      "name": "TBD"
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-26T07:33:00Z",
+     "officialDate": "2026-10-26",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2710,
+        "name": "Higher Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2711,
+        "name": "Lower Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 401,
+      "name": "TBD"
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 3
+    },
+    {
+     "gameDate": "2026-10-27T07:33:00Z",
+     "officialDate": "2026-10-27",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2710,
+        "name": "Higher Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2711,
+        "name": "Lower Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 401,
+      "name": "TBD"
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 4
+    },
+    {
+     "gameDate": "2026-10-28T07:33:00Z",
+     "officialDate": "2026-10-28",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2710,
+        "name": "Higher Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2711,
+        "name": "Lower Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 401,
+      "name": "TBD"
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 5
+    },
+    {
+     "gameDate": "2026-10-30T07:33:00Z",
+     "officialDate": "2026-10-30",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2711,
+        "name": "Lower Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2710,
+        "name": "Higher Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 401,
+      "name": "TBD"
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 6
+    },
+    {
+     "gameDate": "2026-10-31T07:33:00Z",
+     "officialDate": "2026-10-31",
+     "status": {
+      "abstractGameState": "Preview",
+      "detailedState": "Scheduled",
+      "startTimeTBD": true
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 2711,
+        "name": "Lower Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "Low",
+        "placeholder": true
+       }
+      },
+      "home": {
+       "team": {
+        "id": 2710,
+        "name": "Higher Seed League Champion",
+        "venue": {
+         "id": 401,
+         "name": "TBD"
+        },
+        "abbreviation": "High",
+        "placeholder": true
+       }
+      }
+     },
+     "linescore": {
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 401,
+      "name": "TBD"
+     },
+     "seriesStatus": {
+      "abbreviation": "WS"
+     },
+     "gamesInSeries": 7,
+     "seriesGameNumber": 7
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_2"
+   },
+   "games": [
+    {
+     "gameDate": "2026-09-30T00:00:00Z",
+     "officialDate": "2026-09-29",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 111,
+        "name": "Boston Red Sox",
+        "venue": {
+         "id": 3,
+         "name": "Fenway Park"
+        },
+        "abbreviation": "BOS"
+       },
+       "score": 0,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 801139,
+        "fullName": "Payton Tolle"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "name": "New York Yankees",
+        "venue": {
+         "id": 3313,
+         "name": "Yankee Stadium"
+        },
+        "abbreviation": "NYY"
+       },
+       "score": 9,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 693645,
+        "fullName": "Cam Schlittler"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3313,
+      "name": "Yankee Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-01T00:00:00Z",
+     "officialDate": "2026-09-30",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 111,
+        "name": "Boston Red Sox",
+        "venue": {
+         "id": 3,
+         "name": "Fenway Park"
+        },
+        "abbreviation": "BOS"
+       },
+       "score": 2,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 543243,
+        "fullName": "Sonny Gray"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 147,
+        "name": "New York Yankees",
+        "venue": {
+         "id": 3313,
+         "name": "Yankee Stadium"
+        },
+        "abbreviation": "NYY"
+       },
+       "score": 9,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 608331,
+        "fullName": "Max Fried"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 3313,
+      "name": "Yankee Stadium"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_1"
+   },
+   "games": [
+    {
+     "gameDate": "2026-09-29T21:00:00Z",
+     "officialDate": "2026-09-29",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 145,
+        "name": "Chicago White Sox",
+        "venue": {
+         "id": 4,
+         "name": "Rate Field"
+        },
+        "abbreviation": "CWS"
+       },
+       "score": 6,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 696146,
+        "fullName": "Hagen Smith"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 117,
+        "name": "Houston Astros",
+        "venue": {
+         "id": 2392,
+         "name": "Daikin Park"
+        },
+        "abbreviation": "HOU"
+       },
+       "score": 3,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 805123,
+        "fullName": "AJ Blubaugh"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 2392,
+      "name": "Daikin Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-09-30T21:00:00Z",
+     "officialDate": "2026-09-30",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 145,
+        "name": "Chicago White Sox",
+        "venue": {
+         "id": 4,
+         "name": "Rate Field"
+        },
+        "abbreviation": "CWS"
+       },
+       "score": 7,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 680732,
+        "fullName": "Sean Burke"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 117,
+        "name": "Houston Astros",
+        "venue": {
+         "id": 2392,
+         "name": "Daikin Park"
+        },
+        "abbreviation": "HOU"
+       },
+       "score": 3,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 686613,
+        "fullName": "Hunter Brown"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 2392,
+      "name": "Daikin Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "ALWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_4"
+   },
+   "games": [
+    {
+     "gameDate": "2026-09-30T02:00:00Z",
+     "officialDate": "2026-09-29",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 112,
+        "name": "Chicago Cubs",
+        "venue": {
+         "id": 17,
+         "name": "Wrigley Field"
+        },
+        "abbreviation": "CHC"
+       },
+       "score": 0,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 571510,
+        "fullName": "Matthew Boyd"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 135,
+        "name": "San Diego Padres",
+        "venue": {
+         "id": 2680,
+         "name": "Petco Park"
+        },
+        "abbreviation": "SD"
+       },
+       "score": 8,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 650633,
+        "fullName": "Michael King"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 2680,
+      "name": "Petco Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-10-01T02:00:00Z",
+     "officialDate": "2026-09-30",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 112,
+        "name": "Chicago Cubs",
+        "venue": {
+         "id": 17,
+         "name": "Wrigley Field"
+        },
+        "abbreviation": "CHC"
+       },
+       "score": 1,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 592332,
+        "fullName": "Kevin Gausman"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 135,
+        "name": "San Diego Padres",
+        "venue": {
+         "id": 2680,
+         "name": "Petco Park"
+        },
+        "abbreviation": "SD"
+       },
+       "score": 4,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 601713,
+        "fullName": "Nick Pivetta"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 2680,
+      "name": "Petco Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    }
+   ]
+  },
+  {
+   "series": {
+    "id": "F_3"
+   },
+   "games": [
+    {
+     "gameDate": "2026-09-29T18:00:00Z",
+     "officialDate": "2026-09-29",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 143,
+        "name": "Philadelphia Phillies",
+        "venue": {
+         "id": 2681,
+         "name": "Citizens Bank Park"
+        },
+        "abbreviation": "PHI"
+       },
+       "score": 3,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 666200,
+        "fullName": "Jes\u00fas Luzardo"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 144,
+        "name": "Atlanta Braves",
+        "venue": {
+         "id": 4705,
+         "name": "Truist Park"
+        },
+        "abbreviation": "ATL"
+       },
+       "score": 5,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 519242,
+        "fullName": "Chris Sale"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 4705,
+      "name": "Truist Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 1
+    },
+    {
+     "gameDate": "2026-09-30T18:00:00Z",
+     "officialDate": "2026-09-30",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 143,
+        "name": "Philadelphia Phillies",
+        "venue": {
+         "id": 2681,
+         "name": "Citizens Bank Park"
+        },
+        "abbreviation": "PHI"
+       },
+       "score": 4,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 650911,
+        "fullName": "Cristopher S\u00e1nchez"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 144,
+        "name": "Atlanta Braves",
+        "venue": {
+         "id": 4705,
+         "name": "Truist Park"
+        },
+        "abbreviation": "ATL"
+       },
+       "score": 3,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 641816,
+        "fullName": "Tyler Mahle"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 10,
+      "currentInningOrdinal": "10th",
+      "inningState": "Bottom",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 4705,
+      "name": "Truist Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 2
+    },
+    {
+     "gameDate": "2026-10-02T00:00:00Z",
+     "officialDate": "2026-10-01",
+     "status": {
+      "abstractGameState": "Final",
+      "detailedState": "Final",
+      "startTimeTBD": false
+     },
+     "teams": {
+      "away": {
+       "team": {
+        "id": 143,
+        "name": "Philadelphia Phillies",
+        "venue": {
+         "id": 2681,
+         "name": "Citizens Bank Park"
+        },
+        "abbreviation": "PHI"
+       },
+       "score": 2,
+       "isWinner": false,
+       "probablePitcher": {
+        "id": 605400,
+        "fullName": "Aaron Nola"
+       }
+      },
+      "home": {
+       "team": {
+        "id": 144,
+        "name": "Atlanta Braves",
+        "venue": {
+         "id": 4705,
+         "name": "Truist Park"
+        },
+        "abbreviation": "ATL"
+       },
+       "score": 6,
+       "isWinner": true,
+       "probablePitcher": {
+        "id": 678061,
+        "fullName": "Ray Kerr"
+       }
+      }
+     },
+     "linescore": {
+      "currentInning": 9,
+      "currentInningOrdinal": "9th",
+      "inningState": "Top",
+      "teams": {
+       "home": {},
+       "away": {}
+      }
+     },
+     "venue": {
+      "id": 4705,
+      "name": "Truist Park"
+     },
+     "seriesStatus": {
+      "abbreviation": "NLWC"
+     },
+     "gamesInSeries": 3,
+     "seriesGameNumber": 3
+    }
+   ]
+  }
+ ]
+}

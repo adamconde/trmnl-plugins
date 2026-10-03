@@ -1,7 +1,8 @@
 """Tests for src/transform.py against recorded MLB Stats API responses.
 
-Fixtures are MLB feed responses (relay/mlb_relay.py MLB_URL) for a finished postseason (2025)
-and one captured mid-Wild Card round with a game in progress (2026).
+Fixtures are MLB feed responses (relay/mlb_relay.py MLB_URL) for a finished postseason (2025),
+one captured mid-Wild Card round with a game in progress (2026), and one the day before the
+Division Series with probable starters and venues (2026_ds).
 
 Run from the plugin directory: python3 -m unittest discover tests
 """
@@ -24,6 +25,16 @@ def load(season):
     """Return the recorded feed for ``season`` merged with a trmnl namespace."""
     data = json.loads((HERE / "fixtures" / f"postseason_{season}.json").read_text())
     data["trmnl"] = copy.deepcopy(TRMNL)
+    return data
+
+
+def with_starters_and_venues(data, pitcher="Gerrit Cole", venue="Tropicana Field"):
+    """Add a probable starter to every team and a venue to every game (fixtures predate both)."""
+    for entry in data["series"]:
+        for game in entry["games"]:
+            game["venue"] = {"id": 12, "name": venue}
+            for side in game["teams"].values():
+                side["probablePitcher"] = {"id": 1, "fullName": pitcher}
     return data
 
 
@@ -97,6 +108,26 @@ class InProgressPostseason(unittest.TestCase):
     def test_current_round_is_wild_card(self):
         self.assertEqual(self.result["current"], {"name": "Wild Card", "key": "wc"})
 
+    def test_probable_starters_for_scheduled_game(self):
+        series = find(transform.run(with_starters_and_venues(load(2026))), "F_2")
+        self.assertEqual([t["pitcher"] for t in series["teams"]], ["G. Cole", "G. Cole"])
+        self.assertEqual(series["status"]["venue"], "Tropicana Field")
+
+    def test_live_game_has_venue_but_no_probable_starters(self):
+        series = find(transform.run(with_starters_and_venues(load(2026))), "F_3")
+        self.assertEqual(series["status"]["venue"], "Tropicana Field")
+        self.assertNotIn("pitcher", series["teams"][0])
+
+    def test_no_venue_until_home_team_known(self):
+        self.assertNotIn("venue", find(transform.run(with_starters_and_venues(load(2026))), "L_1")["status"])
+
+    def test_unannounced_starter_omitted(self):
+        self.assertNotIn("pitcher", find(self.result, "F_2")["teams"][0])
+
+    def test_short_name(self):
+        self.assertEqual(transform._short_name("George Lombard Jr."), "G. Lombard Jr.")
+        self.assertEqual(transform._short_name("Ichiro"), "Ichiro")
+
     def test_live_game_without_inning_uses_detailed_state(self):
         data = load(2026)
         game = next(s for s in data["series"] if s["series"]["id"] == "F_3")["games"][0]
@@ -105,13 +136,51 @@ class InProgressPostseason(unittest.TestCase):
         self.assertEqual(find(transform.run(data), "F_3")["status"]["inning"], "Warmup")
 
 
+class DivisionSeriesEve(unittest.TestCase):
+    """2026_ds: Division Series set, Game 1s scheduled, later rounds unresolved."""
+
+    def setUp(self):
+        self.result = transform.run(load("2026_ds"))
+
+    def test_championship_slots_named_after_division_series(self):
+        self.assertEqual([t["abbr"] for t in find(self.result, "L_1")["teams"]], ["CWS/CLE", "NYY/TB"])
+        self.assertEqual([t["abbr"] for t in find(self.result, "L_2")["teams"]], ["ATL/LAD", "SD/MIL"])
+        self.assertTrue(all(t["placeholder"] for t in find(self.result, "L_1")["teams"]))
+
+    def test_wild_card_round_leaves_championship_slots_tbd(self):
+        self.assertEqual([t["abbr"] for t in find(transform.run(load(2026)), "L_1")["teams"]], ["TBD", "TBD"])
+
+    def test_world_series_slots_named_by_league(self):
+        self.assertEqual([t["abbr"] for t in self.result["bracket"]["ws"]["teams"]], ["AL", "NL"])
+
+    def test_finished_division_series_gives_its_winner(self):
+        data = load("2026_ds")
+        d2 = next(s for s in data["series"] if s["series"]["id"] == "D_2")
+        for game in sorted(d2["games"], key=lambda g: g["seriesGameNumber"])[:3]:  # CLE (114) sweeps
+            game["status"]["abstractGameState"] = "Final"
+            for side in game["teams"].values():
+                side["isWinner"] = side["team"]["id"] == 114
+        self.assertEqual([t["abbr"] for t in find(transform.run(data), "L_1")["teams"]], ["CLE", "NYY/TB"])
+
+    def test_probable_starters_and_venue(self):
+        series = find(self.result, "D_1")
+        self.assertEqual([t.get("pitcher") for t in series["teams"]], ["G. Cole", "D. Rasmussen"])
+        self.assertEqual(series["status"]["venue"], "Tropicana Field")
+        self.assertNotIn("venue", find(self.result, "L_1")["status"])
+
+
 class WebhookLimits(unittest.TestCase):
     """The transformed result must fit TRMNL's webhook limit (5 KB standard)."""
 
     def test_output_under_5kb(self):
-        for season in (2025, 2026):
+        for season in (2025, 2026, "2026_ds"):
             size = len(json.dumps(transform.run(load(season))))
             self.assertLess(size, 5000, f"{season}: {size} bytes")
+
+    def test_output_under_5kb_with_long_starters_and_venues(self):
+        data = with_starters_and_venues(load(2026), "Christopher Hernandez-Rodriguez Jr.", "UNIQLO Field at Dodger Stadium")
+        size = len(json.dumps(transform.run(data)))
+        self.assertLess(size, 5000, f"{size} bytes")
 
     def test_no_empty_values(self):
         def walk(value):

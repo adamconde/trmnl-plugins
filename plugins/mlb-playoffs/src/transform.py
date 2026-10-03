@@ -16,8 +16,9 @@ False and "" values are dropped:
 
 Each series: {id, best_of, state, status, teams}
     state   "live" | "scheduled" | "final" | "tbd"
-    status  {date, time, inning, game, result} for the next/live game or outcome
-    teams   [{id, abbr, placeholder, wins, score, winner, eliminated}] (away, home of game 1)
+    status  {date, time, inning, game, venue, result} for the next/live game or outcome
+    teams   [{id, abbr, placeholder, wins, score, pitcher, winner, eliminated}] (away, home of game 1)
+            pitcher: probable starter of the next scheduled game, e.g. "G. Cole"
 """
 
 from datetime import datetime, timedelta, timezone
@@ -29,7 +30,7 @@ except ImportError:  # runtime without tzdata; fall back to the fixed UTC offset
 
 ROUNDS = {"F": "Wild Card", "D": "Division Series", "L": "Championship Series", "W": "World Series"}
 ROUND_KEYS = {"F": "wc", "D": "ds", "L": "cs", "W": "ws"}
-INTERNAL_KEYS = ("round", "league")  # used to build the bracket, not by templates
+INTERNAL_KEYS = ("round", "league", "labeled")  # used to build the bracket, not by templates
 INNING_STATE = {"Top": "Top", "Middle": "Mid", "Bottom": "Bot", "End": "End"}
 
 
@@ -53,6 +54,13 @@ def run(input):
         by_round["ds"] = _order_by_feeder(by_round["ds"], by_round["wc"])
         bracket[league] = by_round
     bracket["ws"] = next((s for s in series if s["round"] == "W"), None)
+    for league in ("al", "nl"):
+        for cs in bracket[league]["cs"]:
+            _label_open_slots(cs, bracket[league]["ds"], "TBD")
+    if bracket["ws"]:
+        for league in ("al", "nl"):
+            for cs in bracket[league]["cs"]:
+                _label_open_slots(bracket["ws"], [cs], league.upper())
     division = [s for s in series if s["round"] == "D"]
     bracket["show_wc"] = not division or any(t["placeholder"] for s in division for t in s["teams"])
 
@@ -104,7 +112,7 @@ def _build_series(entry, tz):
     live = next((g for g in games if g["status"]["abstractGameState"] == "Live"), None)
     upcoming = next((g for g in games if g["status"]["abstractGameState"] == "Preview"), None)
 
-    status = {"date": "", "time": "", "inning": "", "game": "", "result": ""}
+    status = {"date": "", "time": "", "inning": "", "game": "", "venue": "", "result": ""}
     if winner:
         state = "final"
         winner["winner"] = True
@@ -115,6 +123,7 @@ def _build_series(entry, tz):
         state = "live"
         status["game"] = f"Game {live['seriesGameNumber']}"
         status["inning"] = _inning(live)
+        status["venue"] = _venue(live)
         for side in live["teams"].values():
             if side["team"]["id"] in by_id:
                 by_id[side["team"]["id"]]["score"] = side.get("score", 0)
@@ -122,6 +131,11 @@ def _build_series(entry, tz):
         state = "scheduled"
         status["game"] = f"Game {upcoming['seriesGameNumber']}"
         status["date"], status["time"] = _when(upcoming, tz)
+        status["venue"] = _venue(upcoming)
+        for side in upcoming["teams"].values():
+            pitcher = (side.get("probablePitcher") or {}).get("fullName")
+            if pitcher and side["team"]["id"] in by_id:
+                by_id[side["team"]["id"]]["pitcher"] = _short_name(pitcher)
     else:
         state = "tbd"
         status["date"] = "TBD"
@@ -149,9 +163,23 @@ def _team(team):
         "placeholder": placeholder,
         "wins": 0,
         "score": None,
+        "pitcher": "",
         "winner": False,
         "eliminated": False,
     }
+
+
+def _venue(game):
+    """Return the game's ballpark, or "" while the home team is unresolved (MLB lists "AL Stadium", "TBD")."""
+    if game["teams"]["home"]["team"].get("placeholder"):
+        return ""
+    return (game.get("venue") or {}).get("name", "")
+
+
+def _short_name(full_name):
+    """Return "G. Cole" for "Gerrit Cole" (suffixes kept: "G. Lombard Jr.")."""
+    first, _, rest = full_name.partition(" ")
+    return f"{first[0]}. {rest}" if rest else full_name
 
 
 def _inning(game):
@@ -206,6 +234,32 @@ def _order_by_feeder(division, wild_card):
     for wc in wild_card:
         ordered += [ds for ds in division if ds not in ordered and fed_by(ds, wc)]
     return ordered + [ds for ds in division if ds not in ordered]
+
+
+def _label_open_slots(series, feeders, fallback):
+    """Name ``series``' unresolved slots after the series feeding them, e.g. "CWS/CLE".
+
+    MLB names these slots by seed ("AL Higher Seed"), not by feeder, so labels fill the
+    open slots in bracket order. A finished feeder gives its winner; one with its own
+    unresolved teams gives ``fallback``. Teams stay placeholders (no logo or dots).
+    Call once per feeder (or with all feeders) after earlier slots are labeled.
+    """
+    known = {t["id"] for t in series["teams"] if not t["placeholder"]}
+    open_slots = [t for t in series["teams"] if t["placeholder"] and not t.get("labeled")]
+    for feeder in feeders:
+        if not open_slots:
+            return
+        winner = next((t for t in feeder["teams"] if t["winner"]), None)
+        if winner:
+            if winner["id"] in known:
+                continue
+            label = winner["abbr"]
+        elif any(t["placeholder"] for t in feeder["teams"]):
+            label = fallback
+        else:
+            label = "/".join(t["abbr"] for t in feeder["teams"])
+        slot = open_slots.pop(0)
+        slot["abbr"], slot["labeled"] = label, True
 
 
 def _current_round(series):

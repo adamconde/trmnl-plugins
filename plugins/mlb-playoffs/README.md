@@ -18,7 +18,7 @@ relay/mlb_relay.py --- MLB feed (~22 KB) --->  webhook -> src/transform.py -> te
   - `half_horizontal`, `half_vertical`, `quadrant`: the current round only (earliest round with an unfinished series), with cards sized to fill the view.
   - Large screens (TRMNL X): every view scales its cards up and adds the game number ("Game 3") to the next or live game.
 
-Card legend: filled dots = series wins (dots = wins needed), large number = live game score, bold = series winner, gray = eliminated. Unresolved slots show the possible teams (`HOU/CWS`) or `TBD`. "Updated" is when TRMNL last received data; if it stops advancing, check the relay.
+Card legend: filled dots = series wins (dots = wins needed), large number = live game score, bold = series winner, gray = eliminated. Before a game, each team shows its probable starter ("G. Cole", `TBD` until announced) and the card shows the ballpark; the bracket and half_horizontal views have room for these, quadrant and half_vertical leave them out. Unresolved slots show the possible teams: `HOU/CWS`, a Championship Series slot as its Division Series matchup (`NYY/TB`), and a World Series slot as `AL`/`NL` until the Championship Series is set, or `TBD`. "Updated" is when TRMNL last received data; if it stops advancing, check the relay.
 
 ## Relay setup
 
@@ -146,5 +146,6 @@ Nothing to change: the relay requests the current year's postseason. Off-season,
 
 The version appears at the end of **About This Plugin** (`author_bio` in [src/settings.yml](src/settings.yml)). Bump it there and add a line here with each release.
 
+- **1.2.0** (2026-10-02): probable starters and ballpark on upcoming games; Championship Series and World Series slots named after the series feeding them (`NYY/TB`, `AL`/`NL`). Requires the updated relay script.
 - **1.1.0** (2026-10-02): larger cards on TRMNL X and other large screens, plus the game number for upcoming and live games.
 - **1.0.0** (2026-09-29): first versioned release. Full bracket with portrait layout, current-round views for half and quadrant, webhook relay for home networks.

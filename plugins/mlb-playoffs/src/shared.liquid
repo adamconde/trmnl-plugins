@@ -1,9 +1,10 @@
 {% comment %}
   Card sizes: "sm" for the dense bracket, "md" (default), "lg" where the view has room.
   Each size steps up one more on large screens (lg:, e.g. TRMNL X), which also show the game number.
+  `details: false` leaves out probable starters and venue, for views too short to fit them.
 {% endcomment %}
 
-{% comment %} One team line: logo, abbreviation, series wins as dots (none for unresolved slots), live game score. {% endcomment %}
+{% comment %} One team line: logo, abbreviation (probable starter beneath before a game), series wins as dots (none for unresolved slots), live game score. {% endcomment %}
 {% template team_row %}
 {% case size %}
   {% when "sm" %}{% assign logo = "w--4 h--4 lg:w--6 lg:h--6" %}{% assign abbr_class = "label lg:label--large" %}{% assign dots = "xsmall lg:progress-dots--small" %}{% assign score_class = "value--xxsmall lg:value--small" %}
@@ -12,7 +13,10 @@
 {% endcase %}
 <div class="flex flex--row flex--center-y gap--xsmall lg:gap--small">
   {% if team.placeholder %}<span class="{{ logo }}"></span>{% else %}<img class="image-dither {{ logo }}" src="https://www.mlbstatic.com/team-logos/team-cap-on-light/{{ team.id }}.svg">{% endif %}
-  <span class="grow {{ abbr_class }}{% if team.winner %} text--bold{% elsif team.eliminated %} text--gray-4{% endif %}" data-clamp="1">{{ team.abbr }}</span>
+  <div class="flex flex--col flex--stretch-x grow">
+    <span class="{{ abbr_class }}{% if team.winner %} text--bold{% elsif team.eliminated %} text--gray-4{% endif %}">{{ team.abbr }}</span>
+    {% if details and series.state == "scheduled" %}{% unless team.placeholder %}<span class="description lg:description--large" data-clamp="1">{{ team.pitcher | default: "TBD" }}</span>{% endunless %}{% endif %}
+  </div>
   {% unless team.placeholder %}
   {% assign needed = series.best_of | divided_by: 2 | plus: 1 %}
   <span class="progress-dots progress-dots--{{ dots }} flex flex--row gap--xsmall">
@@ -26,9 +30,10 @@
 {% comment %} Series box: both teams plus live inning, next game time, or result (stacked on two lines in narrow bracket columns). {% endcomment %}
 {% template series_card %}
 {% assign size = size | default: "md" %}
-<div class="outline p--1 lg:p--2 flex flex--col flex--stretch flex--center-y gap--xsmall lg:gap--small">
-  {% for team in series.teams %}{% render "team_row", team: team, series: series, size: size %}{% endfor %}
-  <div class="flex {% if stacked %}flex--col{% else %}flex--row{% endif %} flex--center gap--xsmall">
+{% if details == nil %}{% assign details = true %}{% endif %}
+<div class="outline p--1 lg:p--2 flex flex--col flex--stretch-x flex--around gap--small lg:gap--medium">
+  {% for team in series.teams %}{% render "team_row", team: team, series: series, size: size, details: details %}{% endfor %}
+  <div class="flex {% if stacked %}flex--col portrait:flex--row{% else %}flex--row{% endif %} flex--center gap--xsmall">
     {% if series.status.game %}<span class="description lg:description--large hidden lg:visible">{{ series.status.game }}</span>{% endif %}
     {% case series.state %}
     {% when "live" %}<span class="label label--small label--inverted">LIVE</span><span class="description lg:description--large">{{ series.status.inning }}</span>
@@ -36,6 +41,7 @@
     {% else %}<span class="description lg:description--large">{{ series.status.date }}</span>{% if series.status.time %}<span class="description lg:description--large">{{ series.status.time }}</span>{% endif %}
     {% endcase %}
   </div>
+  {% if details and series.status.venue %}<span class="description lg:description--large text--center" data-clamp="1">{{ series.status.venue }}</span>{% endif %}
 </div>
 {% endtemplate %}
 
@@ -61,10 +67,10 @@
 {% if count < cols %}{% assign cols = count %}{% endif %}
 <div class="grid grid--cols-{{ cols }}{% if cols > 2 %} portrait:grid--cols-2{% endif %} gap--small w--full h--full">
   {% if current.key == "ws" %}
-  {% render "series_card", series: bracket.ws, size: size %}
+  {% render "series_card", series: bracket.ws, size: size, details: details %}
   {% else %}
-  {% for series in bracket.al[current.key] %}{% render "series_card", series: series, size: size %}{% endfor %}
-  {% for series in bracket.nl[current.key] %}{% render "series_card", series: series, size: size %}{% endfor %}
+  {% for series in bracket.al[current.key] %}{% render "series_card", series: series, size: size, details: details %}{% endfor %}
+  {% for series in bracket.nl[current.key] %}{% render "series_card", series: series, size: size, details: details %}{% endfor %}
   {% endif %}
 </div>
 {% else %}
