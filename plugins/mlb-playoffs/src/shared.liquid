@@ -1,15 +1,16 @@
 {% comment %}
   Card sizes: "sm" for the dense bracket, "md" (default), "lg" where the view has room.
+  Each size steps up one more on large screens (lg:, e.g. TRMNL X), which also show the game number.
 {% endcomment %}
 
 {% comment %} One team line: logo, abbreviation, series wins as dots (none for unresolved slots), live game score. {% endcomment %}
 {% template team_row %}
 {% case size %}
-  {% when "sm" %}{% assign logo = "w--4 h--4" %}{% assign abbr_class = "label" %}{% assign dots = "xsmall" %}{% assign score_class = "value--xxsmall" %}
-  {% when "lg" %}{% assign logo = "w--7 h--7" %}{% assign abbr_class = "title" %}{% assign dots = "base" %}{% assign score_class = "value--small" %}
-  {% else %}{% assign logo = "w--5 h--5" %}{% assign abbr_class = "label" %}{% assign dots = "small" %}{% assign score_class = "value--xsmall" %}
+  {% when "sm" %}{% assign logo = "w--4 h--4 lg:w--6 lg:h--6" %}{% assign abbr_class = "label lg:label--large" %}{% assign dots = "xsmall lg:progress-dots--small" %}{% assign score_class = "value--xxsmall lg:value--small" %}
+  {% when "lg" %}{% assign logo = "w--7 h--7 lg:w--10 lg:h--10" %}{% assign abbr_class = "title lg:title--large" %}{% assign dots = "base lg:progress-dots--large" %}{% assign score_class = "value--small lg:value--large" %}
+  {% else %}{% assign logo = "w--5 h--5 lg:w--8 lg:h--8" %}{% assign abbr_class = "label lg:label--large" %}{% assign dots = "small lg:progress-dots--base" %}{% assign score_class = "value--xsmall lg:value" %}
 {% endcase %}
-<div class="flex flex--row flex--center-y gap--xsmall">
+<div class="flex flex--row flex--center-y gap--xsmall lg:gap--small">
   {% if team.placeholder %}<span class="{{ logo }}"></span>{% else %}<img class="image-dither {{ logo }}" src="https://www.mlbstatic.com/team-logos/team-cap-on-light/{{ team.id }}.svg">{% endif %}
   <span class="grow {{ abbr_class }}{% if team.winner %} text--bold{% elsif team.eliminated %} text--gray-4{% endif %}" data-clamp="1">{{ team.abbr }}</span>
   {% unless team.placeholder %}
@@ -25,13 +26,14 @@
 {% comment %} Series box: both teams plus live inning, next game time, or result (stacked on two lines in narrow bracket columns). {% endcomment %}
 {% template series_card %}
 {% assign size = size | default: "md" %}
-<div class="outline p--1 flex flex--col flex--stretch flex--center-y gap--xsmall">
+<div class="outline p--1 lg:p--2 flex flex--col flex--stretch flex--center-y gap--xsmall lg:gap--small">
   {% for team in series.teams %}{% render "team_row", team: team, series: series, size: size %}{% endfor %}
   <div class="flex {% if stacked %}flex--col{% else %}flex--row{% endif %} flex--center gap--xsmall">
+    {% if series.status.game %}<span class="description lg:description--large hidden lg:visible">{{ series.status.game }}</span>{% endif %}
     {% case series.state %}
-    {% when "live" %}<span class="label label--small label--inverted">LIVE</span><span class="description">{{ series.status.inning }}</span>
-    {% when "final" %}<span class="description">{{ series.status.result }}</span>
-    {% else %}<span class="description">{{ series.status.date }}</span>{% if series.status.time %}<span class="description">{{ series.status.time }}</span>{% endif %}
+    {% when "live" %}<span class="label label--small label--inverted">LIVE</span><span class="description lg:description--large">{{ series.status.inning }}</span>
+    {% when "final" %}<span class="description lg:description--large">{{ series.status.result }}</span>
+    {% else %}<span class="description lg:description--large">{{ series.status.date }}</span>{% if series.status.time %}<span class="description lg:description--large">{{ series.status.time }}</span>{% endif %}
     {% endcase %}
   </div>
 </div>
@@ -40,7 +42,7 @@
 {% comment %} One bracket column: round header plus its series (a list, or a single World Series), cards at `size`, spread down the column. {% endcomment %}
 {% template round_column %}
 <div class="flex flex--col flex--stretch-x gap--small w--full">
-  <span class="label label--small label--underline">{{ header }}</span>
+  <span class="label label--small lg:label--large label--underline">{{ header }}</span>
   <div class="flex flex--col flex--stretch-x flex--around grow gap--small">
     {% for series in list %}{% render "series_card", series: series, size: size, stacked: true %}{% endfor %}
     {% if single %}{% render "series_card", series: single, size: size, stacked: true %}{% endif %}
